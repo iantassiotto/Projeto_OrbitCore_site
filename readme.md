@@ -154,11 +154,11 @@ ESI = Earth Similarity Index — Planetary Habitability Laboratory (PHL/UPR).
 
 ## 📚 Referências Científicas
 
-- NASA Exoplanet Archive — https://exoplanetarchive.ipac.caltech.edu
+- NASA Exoplanet Archive — https://exoplanetarchive.ipac.caltech.edu/
 - NASA Eyes on Exoplanets — https://eyes.nasa.gov/apps/exo
 - JWST TRAPPIST-1 Results (2023) — Nature Astronomy
-- Planetary Habitability Laboratory — https://phl.upr.edu
-- The Planetary Society / LightSail 2 — https://www.planetary.org
+- Nature of TRAPPIST-1 - https://www.aanda.org/articles/aa/full_html/2018/05/aa32233-17/aa32233-17.html
+- The Planetary Science Journal - https://iopscience.iop.org/article/10.3847/PSJ/abd022
 
 ---
 
