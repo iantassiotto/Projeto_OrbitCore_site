@@ -1,0 +1,91 @@
+/* =============================================
+   ORBITCORE — Glossário Técnico
+   ============================================= */
+
+.glossary-section { padding: 60px 0 100px; }
+
+.glossary-category { margin-bottom: 60px; }
+
+.glossary-category-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(0,212,255,.15);
+}
+
+.glossary-entry {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 16px;
+  transition: border-color .3s;
+  scroll-margin-top: 100px;
+}
+
+.glossary-entry:hover { border-color: rgba(0,212,255,.2); }
+
+.glossary-entry-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.glossary-term {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.glossary-orig {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .75rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 4px;
+  letter-spacing: .02em;
+}
+
+.glossary-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.glossary-badge--astro { background: rgba(0,212,255,.1); color: var(--neon-blue); border: 1px solid rgba(0,212,255,.25); }
+.glossary-badge--hw    { background: rgba(168,85,247,.1); color: var(--neon-purple); border: 1px solid rgba(168,85,247,.25); }
+
+.glossary-def { color: var(--text-muted); font-size: .95rem; line-height: 1.7; }
+.glossary-def strong { color: var(--text-primary); }
+.glossary-def em { font-style: italic; }
+.glossary-def code {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .85em;
+  background: rgba(0,212,255,.07);
+  border: 1px solid rgba(0,212,255,.15);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--neon-blue);
+}
+
+@media (max-width: 768px) {
+  .glossary-entry { padding: 20px; }
+  .glossary-entry-header { flex-direction: column; gap: 8px; }
+}
