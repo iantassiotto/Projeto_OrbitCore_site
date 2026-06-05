@@ -1,0 +1,73 @@
+/* =============================================
+   ORBITCORE — Timeline (Página Prisma)
+   ============================================= */
+
+.timeline { padding: 100px 0; }
+
+.timeline-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.timeline-text-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.timeline-list {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 60px;
+}
+
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 12px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--neon-blue), var(--neon-purple));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -36px; top: 6px;
+  width: 14px; height: 14px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--neon-blue);
+}
+
+.timeline-year {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.timeline-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  color: var(--text-muted);
+  font-size: .95rem;
+  line-height: 1.6;
+  max-width: 560px;
+}
