@@ -1,0 +1,357 @@
+/* =============================================
+   ORBITCORE — Missão
+   (Objetivos, Hardware, Fórmulas, Pipeline)
+   ============================================= */
+
+/* ── Sketch Code Block (Arduino) ── */
+.sketch-code { font-family: 'Share Tech Mono', monospace; font-size: .72rem; line-height: 1.9; color: var(--neon-blue); }
+.sketch-comment { color: #475569; }
+.sketch-keyword  { color: #fbbf24; }
+.sketch-string   { color: #10b981; }
+
+/* ── Objectives ── */
+.objectives { padding: 100px 0; }
+
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.objective-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all .3s ease;
+}
+
+.objective-card:hover {
+  border-color: rgba(0,212,255,.3);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.3), 0 0 20px rgba(0,212,255,.06);
+}
+
+.objective-number {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(0,212,255,.2);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.objective-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.objective-desc { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ── Hardware ── */
+.hardware {
+  padding: 100px 0;
+  background: linear-gradient(180deg, transparent, rgba(0,212,255,.02) 50%, transparent);
+}
+
+/* ── Math / Formula ── */
+.math-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, transparent, rgba(168,85,247,.02) 50%, transparent);
+}
+
+.math-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.math-formulas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.formula-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.formula-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+}
+
+.formula-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  letter-spacing: .1em;
+  margin-bottom: 12px;
+}
+
+.formula-title--purple { color: var(--neon-purple); }
+
+.formula-display {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  color: #fff;
+  background: rgba(0,212,255,.04);
+  border: 1px solid rgba(0,212,255,.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  letter-spacing: .05em;
+}
+
+.formula-display--sub { margin-top: 0; }
+
+.formula-display--purple {
+  color: var(--neon-purple);
+  border-color: rgba(168,85,247,.15);
+  background: rgba(168,85,247,.04);
+}
+
+.formula-desc { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+
+.formula-vars { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+
+.formula-var {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .75rem;
+  color: var(--neon-blue);
+  background: rgba(0,212,255,.06);
+  border: 1px solid rgba(0,212,255,.15);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.formula-var--purple {
+  border-color: rgba(168,85,247,.2);
+  background: rgba(168,85,247,.06);
+  color: var(--neon-purple);
+}
+
+/* ── Data Pipeline ── */
+.pipeline {
+  padding: 100px 0;
+  background: linear-gradient(180deg, transparent, rgba(0,212,255,.02) 50%, transparent);
+}
+
+.pipeline-flow {
+  display: flex;
+  align-items: stretch;
+  margin-top: 60px;
+  gap: 0;
+}
+
+.pipeline-step {
+  flex: 1;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  padding: 28px 16px;
+  text-align: center;
+  transition: all .3s ease;
+  position: relative;
+}
+
+.pipeline-step:hover {
+  border-color: rgba(0,212,255,.35);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.3), 0 0 24px rgba(0,212,255,.08);
+}
+
+.pipeline-step::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.pipeline-step:hover::before { opacity: 1; }
+
+.pipeline-icon { font-size: 2rem; margin-bottom: 14px; }
+
+.pipeline-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .55rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pipeline-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: .05em;
+}
+
+.pipeline-detail {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .65rem;
+  color: var(--neon-blue);
+  margin-bottom: 12px;
+}
+
+.pipeline-desc { font-size: .78rem; color: var(--text-muted); line-height: 1.5; }
+
+.pipeline-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,212,255,.35);
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.pipeline-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,212,255,.15), rgba(0,212,255,.35), rgba(0,212,255,.15));
+}
+
+.pipeline-arrow-icon {
+  background: var(--dark-bg);
+  padding: 0 4px;
+  position: relative;
+  z-index: 1;
+  font-style: normal;
+}
+
+/* ── Calculadora Kepler ── */
+.kepler-calc {
+  background: rgba(0,212,255,.03);
+  border: 1px solid rgba(0,212,255,.15);
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 24px;
+}
+
+.kepler-calc-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.kepler-calc-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.kepler-label {
+  display: block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .75rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.kepler-unit { color: var(--neon-blue); margin-left: 4px; }
+
+.kepler-slider {
+  width: 100%;
+  accent-color: var(--neon-blue);
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.kepler-au-display {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .85rem;
+  color: var(--neon-blue);
+  margin-bottom: 16px;
+}
+
+.kepler-presets {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.kepler-preset {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: .6rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.kepler-preset:hover { color: #fff; border-color: rgba(255,255,255,.2); }
+.kepler-preset--active { background: rgba(0,212,255,.1); border-color: rgba(0,212,255,.5); color: var(--neon-blue); }
+
+.kepler-result-group { text-align: center; }
+
+.kepler-result-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--neon-blue);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.kepler-result-label {
+  font-size: .8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 12px;
+}
+
+.kepler-result-formula {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .7rem;
+  color: rgba(0,212,255,.5);
+  margin-bottom: 8px;
+}
+
+.kepler-result-note {
+  font-size: .75rem;
+  color: var(--neon-purple);
+  font-family: 'Share Tech Mono', monospace;
+}
