@@ -12,7 +12,7 @@
 O site da OrbitCore funciona como o **portal oficial da missão** — semelhante
 aos sites de missões da NASA. Ele apresenta ao público o que é a sonda,
 como ela funciona, quais são seus componentes, qual é o objetivo científico
-da missão e os resultados da análise dos 7 planetas do sistema TRAPPIST-1.
+da missão e os resultados da análise dos 7 planetas do sistema solar TRAPPIST-1.
 
 ---
 
@@ -23,30 +23,28 @@ Apresentação geral da missão OrbitCore: conceito da sonda veleiro solar,
 objetivos científicos, destaque para o sistema TRAPPIST-1 e chamada
 para as demais seções do site.
 
-### `pages/missao.html` — A Missão
-Descrição detalhada da missão:
-- Componentes da sonda (vela solar, RFID, Arduino, sensores)
-- Como a sonda funciona na prática
-- Por que o TRAPPIST-1 foi escolhido como sistema-alvo
-- Contexto científico: habitabilidade e exploração espacial
-- Códigos utilizados no projeto (Arduino e Python)
+### `pages/emulador.html` — Emulador
+Seção interativa com três demonstrações:
+- **Visualização 3D** do sistema TRAPPIST-1 via NASA Eyes on Exoplanets
+- **Circuito Arduino** em tempo real — demonstração do modelo teórico
+  da sonda OrbitCore funcionando
 
 ### `pages/trappist-1.html` — Sistema TRAPPIST-1
 Catálogo completo dos 7 exoplanetas com:
 - Especificações de cada planeta (raio, massa, gravidade, temperatura)
 - ESI — Índice de Similaridade com a Terra
 - Composição atmosférica (gases detectados ou estimados)
-- Período orbital e distância da estrela
+- Período orbital 
+- Distância da estrela
 - Comparação direta de cada planeta com a Terra
 - Indicação do planeta mais habitável
 
-### `pages/emulador.html` — Emulador
-Seção interativa com três demonstrações:
-- **Visualização 3D** do sistema TRAPPIST-1 via NASA Eyes on Exoplanets
-- **Circuito Arduino** em tempo real — demonstração do modelo teórico
-  da sonda OrbitCore funcionando
-- **Terminal simulado** — emula o recebimento de dados da sonda,
-  espelhando o comportamento do programa Python
+### `pages/missao.html` — A Missão
+Descrição detalhada da missão:
+- Componentes da sonda (vela solar, RFID, Arduino, sensores)
+- Como a sonda funciona na prática
+- Contexto científico: fórmulas matemáticas 
+- Códigos utilizados no projeto (Arduino)
 
 ### `pages/prisma.html` — Equipe PRISMA
 Apresentação dos integrantes da equipe, funções e contribuições
@@ -54,7 +52,7 @@ de cada membro no projeto.
 
 ### `pages/glossario.html` — Glossário
 Definições de todos os termos técnicos e científicos presentes no site:
-exoplanetas, ESI, vela solar, RFID, tidally locked, magnitude, UA, entre outros.
+exoplanetas, ESI, RFID, tidally locked, magnitude, UA, entre outros.
 
 ---
 
@@ -114,6 +112,7 @@ ORBITCORE_SITE/
 | CSS3 + Flexbox | Layout, responsividade e animações |
 | JavaScript (ES6+) | Interatividade, emulador e lógica de comparação |
 | NASA Eyes on Exoplanets | Visualização 3D do sistema TRAPPIST-1 |
+| Protótipo Wokwi | Visualização do circuito
 
 ---
 
@@ -137,10 +136,10 @@ ESI = Earth Similarity Index — Planetary Habitability Laboratory (PHL/UPR).
 
 | Nome | RM | Responsabilidade |
 |------|----|-----------------|
-| | | Líder Técnico / Hardware (Edge Computing) |
-| | | Software & Python |
-| | | Front-End & Web Development |
-| | | Ciência & Storytelling |
+| Ian | 570812 | Tech Lead |
+| João Gabriel | 573685 | Engenheiro de Software & Storyteller |
+| Hyan Hideo | 571005 | Cientista & Front-End |
+| Elizeu | 569433 | Designer |
 
 ---
 
@@ -149,28 +148,7 @@ ESI = Earth Similarity Index — Planetary Habitability Laboratory (PHL/UPR).
 | Disciplina | Entregável |
 |---|---|
 | Front-End Design | HTML + CSS (6 seções, Flexbox, layout responsivo) |
-| Web Development | JavaScript + 15 commits + `AI.md` |
-
----
-
-## 🚀 Como Executar Localmente
-
-```bash
-# Com Python
-python -m http.server 8080
-
-# Com Node.js
-npx serve .
-```
-Acesse `http://localhost:8080` no navegador.
-
----
-
-## 🤖 Uso de Inteligência Artificial
-
-Documentado em [`AI.md`](./AI.md) conforme exigido pela disciplina
-de Web Development. Cada uso de IA está registrado com ferramenta,
-prompt utilizado e trecho gerado.
+| Web Development | JavaScript + 15 commits 
 
 ---
 
