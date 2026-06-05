@@ -1,0 +1,281 @@
+/* =============================================
+   ORBITCORE — Seções Globais
+   (Features, Mission, ODS, Pages, Tech, Footer)
+   ============================================= */
+
+/* ── Features ── */
+.features { padding: 100px 0; }
+
+.features-header { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+
+.features-header p { color: var(--text-muted); font-size: 1.05rem; }
+
+/* ── Mission ── */
+.mission {
+  padding: 100px 0;
+  background: linear-gradient(180deg, transparent, rgba(0,212,255,.02) 50%, transparent);
+}
+
+.mission-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.mission-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.mission-card-main {
+  background: var(--dark-card);
+  border: 1px solid rgba(0,212,255,.2);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mission-card-main::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, rgba(0,212,255,.05) 25%, transparent 50%);
+  animation: rotate-bg 12s linear infinite;
+}
+
+@keyframes rotate-bg {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.mission-card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.data-row:last-child { border-bottom: none; }
+.data-label { color: var(--text-muted); }
+.data-value { color: var(--neon-blue); font-weight: 600; }
+
+.data-value--red    { color: #ef4444; }
+.data-value--orange { color: #f97316; }
+.data-value--yellow { color: #fbbf24; }
+.data-value--green  { color: var(--neon-green); }
+.data-value--blue   { color: #3b82f6; }
+.data-value--purple { color: var(--neon-purple); }
+.data-value--gray   { color: #94a3b8; }
+.data-value--white   { color: #ffffff; }
+
+.mission-badge-float {
+  background: linear-gradient(135deg, var(--neon-purple), #6d28d9);
+  border-radius: 14px;
+  padding: 16px 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(168,85,247,.4);
+  margin-top: 48px;
+  align-self: flex-end;
+}
+
+.mission-badge-float .big   { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 700; }
+.mission-badge-float .small { font-size: .7rem; letter-spacing: .1em; opacity: .8; text-transform: uppercase; }
+
+.mission-card-hero { max-width: 360px; width: 100%; }
+
+/* ── ODS ── */
+.ods { padding: 80px 0; }
+
+.ods-inner {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 24px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ods-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16,185,129,.04), transparent 60%);
+}
+
+.ods-badge {
+  width: 120px; height: 120px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  box-shadow: 0 0 40px rgba(16,185,129,.4);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ods-content { position: relative; z-index: 1; }
+
+.ods-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  margin-bottom: 8px;
+  letter-spacing: .05em;
+}
+
+.ods-desc { color: var(--text-muted); line-height: 1.7; font-size: 1rem; max-width: 600px; }
+
+/* ── Pages Navigation Cards ── */
+.pages { padding: 100px 0; }
+
+.pages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.page-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-card:hover {
+  border-color: rgba(0,212,255,.35);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(0,0,0,.4), 0 0 40px rgba(0,212,255,.1);
+}
+
+.page-card-icon {
+  font-size: 2.5rem;
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, rgba(0,212,255,.1), rgba(168,85,247,.1));
+  border: 1px solid rgba(0,212,255,.15);
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+}
+
+.page-card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.page-card-desc { font-size: .95rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
+
+.page-card-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .85rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: var(--neon-blue);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: gap .25s;
+}
+
+.page-card:hover .page-card-link { gap: 14px; }
+
+/* ── Footer ── */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--dark-border);
+  padding: 60px 0 32px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-logo-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-logo-text span { color: var(--neon-blue); }
+
+.footer-desc { color: var(--text-muted); font-size: .9rem; line-height: 1.6; margin-bottom: 24px; }
+
+.footer-col-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.footer-links a { color: var(--text-muted); text-decoration: none; font-size: .9rem; transition: color .25s; }
+.footer-links a:hover { color: var(--text-primary); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid var(--dark-border);
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+
+.footer-brand-btns { display: flex; gap: 12px; }
+.footer-credit { display: flex; align-items: center; gap: 6px; }
+.footer-heart { color: #ef4444; }
