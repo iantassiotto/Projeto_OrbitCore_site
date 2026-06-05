@@ -1,0 +1,43 @@
+/* =============================================
+   ORBITCORE — BASE: Variáveis e Reset
+   ============================================= */
+
+:root {
+  --neon-blue:    #00d4ff;
+  --neon-purple:  #a855f7;
+  --neon-cyan:    #06b6d4;
+  --neon-green:   #10b981;
+  --dark-bg:      #020617;
+  --dark-card:    #0a0f1e;
+  --dark-border:  #1e293b;
+  --text-primary: #e2e8f0;
+  --text-muted:   #64748b;
+  --glow-blue:    0 0 20px rgba(0,212,255,.4), 0 0 60px rgba(0,212,255,.15);
+  --glow-purple:  0 0 20px rgba(168,85,247,.4), 0 0 60px rgba(168,85,247,.15);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Canvas — Star Field */
+#starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 3px; }
