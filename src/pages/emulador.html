@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Emulador TRAPPIST-1 — Visualize o sistema real no NASA Eyes on Exoplanets e simule o circuito Arduino/RFID no Wokwi." />
+  <title>Emulador TRAPPIST‑1 | OrbitCore</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilo.css" />
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+          <div class="nav-logo-icon">
+            <img src="../assets/prisma_logo_cosmica.jpeg" alt="Prisma Logo" /></div>
+          <span class="nav-logo-text">Orbit<span>Core</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="emulador.html" class="active">Emulador</a></li>
+          <li><a href="trappist-1.html">TRAPPIST-1</a></li>
+          <li><a href="missao.html">Missão</a></li>
+          <li><a href="prisma.html">Prisma</a></li>
+          <li><a href="glossario.html">Glossário</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#nasa-eyes" class="btn btn-primary">Explorar Agora</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="../../index.html">Início</a>
+        <a href="prisma.html">Prisma Technologies</a>
+        <a href="emulador.html">Emulador TRAPPIST-1</a>
+        <a href="trappist-1.html">TRAPPIST-1</a>
+        <a href="missao.html">Missão</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="hero-bg-orb hero-bg-orb-1"></div>
+    <div class="hero-bg-orb hero-bg-orb-2"></div>
+
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          EMULADOR ATIVO &nbsp;·&nbsp; TRAPPIST&#8209;1
+        </div>
+
+        <h1 class="hero-title">
+          Simule a<br />
+          <span class="gradient-text">Missão em Tempo</span><br />
+          Real
+        </h1>
+
+        <p class="hero-subtitle">
+          Explore o sistema TRAPPIST‑1 através da visualização 3D da NASA e simule o circuito Arduino completo no Wokwi — tudo diretamente no seu navegador, sem instalar nada.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#nasa-eyes" class="btn btn-primary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg> NASA Eyes</a>
+          <a href="#wokwi" class="btn btn-secondary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg> Simulação Wokwi</a>
+          <a href="trappist-1.html" class="btn btn-ghost"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.341 6.484A10 10 0 0 1 10.266 21.85"/><path d="M3.659 17.516A10 10 0 0 1 13.74 2.152"/><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/></svg> TRAPPIST-1</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">7</div>
+            <div class="hero-stat-label">Planetas</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">3D</div>
+            <div class="hero-stat-label">Visualização</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value"><a href="glossario.html#iot" class="glossary-link">IoT</a></div>
+            <div class="hero-stat-label">Simulado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       NASA EYES ON EXOPLANETS
+  ═══════════════════════════════════════════ -->
+  <section class="embed-section" id="nasa-eyes">
+    <div class="container">
+
+      <div class="nasa-header reveal">
+        <div>
+          <div class="section-badge">NASA Eyes on Exoplanets</div>
+          <h2 class="section-title">
+            O Sistema TRAPPIST&#8209;1 em <span class="gradient-text">3D Real</span>
+          </h2>
+          <p class="section-text">
+            Visualização 3D interativa powered by NASA. Explore cada uma das 7 órbitas em escala real, compare os tamanhos com a Terra e visualize a zona habitável da anã vermelha.
+          </p>
+          <a
+            href="https://eyes.nasa.gov/apps/exo/#/multiplanet/TRAPPIST-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost btn-sm nasa-newtab-btn"
+          >↗ Abrir em nova aba</a>
+        </div>
+        <div class="nasa-stats">
+          <div class="nasa-stat">
+            <div class="nasa-stat-value">3D</div>
+            <div class="nasa-stat-label">Interativo</div>
+          </div>
+          <div class="nasa-stat-divider"></div>
+          <div class="nasa-stat">
+            <div class="nasa-stat-value">7</div>
+            <div class="nasa-stat-label">Planetas</div>
+          </div>
+          <div class="nasa-stat-divider"></div>
+          <div class="nasa-stat">
+            <div class="nasa-stat-value">NASA</div>
+            <div class="nasa-stat-label">Powered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="embed-frame-wrapper embed-frame-wrapper--full reveal reveal-delay-1">
+        <iframe
+          src="https://eyes.nasa.gov/apps/exo/#/planet/TRAPPIST-1_e"
+          title="NASA Eyes on Exoplanets — Sistema TRAPPIST-1"
+          allowfullscreen
+        >
+          <div class="embed-placeholder">
+            <div class="embed-placeholder-icon">🌌</div>
+            <div class="embed-placeholder-title">NASA Eyes on Exoplanets</div>
+            <p class="embed-placeholder-desc">Seu navegador não suporta iframes. Acesse diretamente.</p>
+            <a href="https://eyes.nasa.gov/apps/exo/#/planet/TRAPPIST-1_b" target="_blank" rel="noopener noreferrer" class="btn btn-primary embed-placeholder-btn">🚀 Abrir NASA Eyes</a>
+          </div>
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WOKWI SIMULATION
+  ═══════════════════════════════════════════ -->
+  <section class="embed-section" id="wokwi">
+    <div class="container">
+
+      <div class="nasa-header reveal">
+        <div>
+          <div class="section-badge">Simulação Wokwi</div>
+          <h2 class="section-title">
+            Circuito Arduino <span class="gradient-text">em Tempo Real</span>
+          </h2>
+          <p class="section-text">
+            O Wokwi é um simulador de eletrônica online que permite testar circuitos Arduino sem hardware físico. Simule a leitura de tags RFID, o LED RGB mudando de cor e o buzzer disparando — tudo no navegador.
+          </p>
+          <a
+            href="https://wokwi.com/projects/465213890222709761"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost btn-sm nasa-newtab-btn"
+          >↗ Abrir em nova aba</a>
+        </div>
+        <div class="nasa-stats nasa-stats--purple">
+          <div class="nasa-stat">
+            <div class="nasa-stat-value">UNO</div>
+            <div class="nasa-stat-label">Arduino</div>
+          </div>
+          <div class="nasa-stat-divider"></div>
+          <div class="nasa-stat">
+            <div class="nasa-stat-value">RFID</div>
+            <div class="nasa-stat-label">Sensor</div>
+          </div>
+          <div class="nasa-stat-divider"></div>
+          <div class="nasa-stat">
+            <div class="nasa-stat-value">IoT</div>
+            <div class="nasa-stat-label">Simulado</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="embed-frame-wrapper embed-frame-wrapper--full embed-frame-wrapper--purple reveal reveal-delay-1">
+        <iframe
+          src="https://wokwi.com/projects/465213890222709761?embed=1&theme=dark&v=12"
+          title="Simulação Wokwi — Circuito OrbitCore Arduino RFID"
+          allow="serial"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ESPECIFICAÇÕES DO CIRCUITO
+  ═══════════════════════════════════════════ -->
+  <section class="circuit-specs">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Hardware</div>
+        <h2 class="section-title reveal">
+          Especificações do<br />
+          <span class="gradient-text">Circuito OrbitCore</span>
+        </h2>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card reveal">
+          <div class="spec-icon"><svg class="icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v2"/><path d="M12 2v2"/><path d="M17 20v2"/><path d="M17 2v2"/><path d="M2 12h2"/><path d="M2 17h2"/><path d="M2 7h2"/><path d="M20 12h2"/><path d="M20 17h2"/><path d="M20 7h2"/><path d="M7 20v2"/><path d="M7 2v2"/><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg></div>
+          <div class="spec-name">Arduino UNO</div>
+          <div class="spec-detail">ATmega328P · 16 MHz</div>
+          <p class="spec-desc">Microcontrolador principal. Processa leituras RFID, controla o LED RGB e o buzzer, envia dados via serial.</p>
+        </div>
+
+        <div class="spec-card reveal reveal-delay-1">
+          <div class="spec-icon"><svg class="icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg></div>
+          <div class="spec-name">MFRC522</div>
+          <div class="spec-detail">13.56 MHz · SPI</div>
+          <p class="spec-desc">Leitor de tags RFID/NFC. Detecta a proximidade da sonda usando o protocolo ISO/IEC 14443 via <a href="glossario.html#spi" class="glossary-link">SPI</a>.</p>
+        </div>
+
+        <div class="spec-card reveal reveal-delay-2">
+          <div class="spec-icon"><svg class="icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+          <div class="spec-name">LED RGB</div>
+          <div class="spec-detail">Cátodo Comum · <a href="glossario.html#pwm" class="glossary-link">PWM</a></div>
+          <p class="spec-desc">Feedback visual. Ao detectar um planeta, o led pisca 3 vezes na cor amarela. Caso o reconhecimento falhe, exibe a cor vermelha e se for concluído, exibe a cor verde.</p>
+        </div>
+
+        <div class="spec-card reveal reveal-delay-3">
+          <div class="spec-icon"><svg class="icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></svg></div>
+          <div class="spec-name">Buzzer Passivo</div>
+          <div class="spec-detail">PWM · tone()</div>
+          <p class="spec-desc">Feedback sonoro, com frequência e duração distintas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COMO FUNCIONA
+  ═══════════════════════════════════════════ -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Funcionamento</div>
+        <h2 class="section-title">
+          Passo a Passo da<br />
+          <span class="gradient-text">Detecção RFID</span>
+        </h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <div class="step-title">Aproximação do Módulo</div>
+          <p class="step-desc">A sonda OrbitCore (com módulo MFRC522 embutido) se aproxima de um dos 7 planetas do sistema TRAPPIST-1 na maquete física.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">02</div>
+          <div class="step-title">Leitura &amp; Identificação</div>
+          <p class="step-desc">O MFRC522 lê o UID da tag e o Arduino identifica qual planeta corresponde àquele identificador único hexadecimal.</p>
+        </div>
+
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">03</div>
+          <div class="step-title">Feedback &amp; Telemetria</div>
+          <p class="step-desc">LED acende, buzzer emite o tom correspondente e dados científicos são enviados via Serial para o dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo-text">Orbit<span>Core</span></div>
+          <p class="footer-desc">Projeto educacional e científico desenvolvido pela Prisma Technologies para a Global Solution FIAP 2026. Explorando mundos além do nosso Sol.</p>
+          <div class="footer-brand-btns">
+            <a href="emulador.html" class="btn btn-primary btn-sm"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg> Explorar</a>
+            <a href="prisma.html" class="btn btn-ghost btn-sm">Sobre</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Páginas</div>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="prisma.html">Prisma Technologies</a></li>
+            <li><a href="emulador.html">Emulador TRAPPIST‑1</a></li>
+            <li><a href="trappist-1.html">TRAPPIST-1</a></li>
+            <li><a href="missao.html">Missão</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Sistema TRAPPIST-1</div>
+          <ul class="footer-links">
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1b</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1c</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1d</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1e</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1f</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1g</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1h</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 OrbitCore · Prisma Technologies · FIAP Global Solution 1º Semestre</span>
+        <span class="footer-credit">Feito com <span class="footer-heart">♥</span> pela equipe Prisma · ODS 9</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
