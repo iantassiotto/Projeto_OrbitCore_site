@@ -1,0 +1,246 @@
+/* =============================================
+   ORBITCORE — Hero (Index e Subpáginas)
+   ============================================= */
+
+/* ── Hero Principal (index) ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Hero de Subpáginas ── */
+.page-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-content { max-width: 720px; }
+
+/* Background Orbs */
+.hero-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  animation: float-orb 8s ease-in-out infinite;
+}
+
+.hero-bg-orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,212,255,.12) 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+
+.hero-bg-orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(168,85,247,.1) 0%, transparent 70%);
+  bottom: -100px; left: -100px;
+  animation-delay: -4s;
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-30px) scale(1.05); }
+}
+
+/* Hero Inner Grid */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Hero Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(0,212,255,.08);
+  border: 1px solid rgba(0,212,255,.25);
+  border-radius: 50px;
+  font-size: .75rem;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--neon-blue);
+  letter-spacing: .1em;
+  margin-bottom: 24px;
+  animation: fade-in-up .6s ease both;
+}
+
+.hero-badge-dot {
+  width: 6px; height: 6px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--neon-green);
+}
+
+/* Hero Text */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  animation: fade-in-up .6s .1s ease both;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 520px;
+  animation: fade-in-up .6s .2s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 60px;
+  animation: fade-in-up .6s .3s ease both;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  animation: fade-in-up .6s .4s ease both;
+}
+
+.hero-stat-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--neon-blue);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: .8rem;
+  color: var(--text-muted);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ── Planet Visual ── */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: fade-in-right .8s .2s ease both;
+}
+
+.planet-system {
+  position: relative;
+  width: 420px; height: 420px;
+}
+
+.planet-orbit {
+  position: absolute;
+  border: 1px solid rgba(0,212,255,.12);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-1 { width: 140px; height: 140px; animation: rotate 8s linear infinite; }
+.orbit-2 { width: 220px; height: 220px; animation: rotate 14s linear infinite reverse; }
+.orbit-3 { width: 320px; height: 320px; animation: rotate 22s linear infinite; }
+.orbit-4 { width: 410px; height: 410px; animation: rotate 32s linear infinite reverse; }
+
+@keyframes rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.planet-dot { position: absolute; border-radius: 50%; }
+
+.orbit-1 .planet-dot { width: 10px; height: 10px; background: #ff6b6b; box-shadow: 0 0 12px #ff6b6b; top: -5px; left: calc(50% - 5px); }
+.orbit-2 .planet-dot { width: 14px; height: 14px; background: var(--neon-cyan); box-shadow: 0 0 16px var(--neon-cyan); top: -7px; left: calc(50% - 7px); }
+.orbit-3 .planet-dot { width: 12px; height: 12px; background: var(--neon-purple); box-shadow: 0 0 14px var(--neon-purple); top: -6px; left: calc(50% - 6px); }
+.orbit-4 .planet-dot { width: 8px; height: 8px; background: #fbbf24; box-shadow: 0 0 10px #fbbf24; top: -4px; left: calc(50% - 4px); }
+
+.star-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  background: radial-gradient(circle at 40% 35%, #fff9c4, #ffb347 40%, #ff6500 80%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ffb347, 0 0 60px rgba(255,179,71,.5), 0 0 120px rgba(255,101,0,.3);
+  animation: star-pulse 3s ease-in-out infinite;
+}
+
+@keyframes star-pulse {
+  0%, 100% { box-shadow: 0 0 20px #ffb347, 0 0 60px rgba(255,179,71,.5), 0 0 120px rgba(255,101,0,.3); }
+  50%       { box-shadow: 0 0 30px #ffb347, 0 0 80px rgba(255,179,71,.7), 0 0 160px rgba(255,101,0,.4); }
+}
+
+/* ── Terminal Widget ── */
+.terminal-widget {
+  position: absolute;
+  top: 20px; right: -40px;
+  background: rgba(10,15,30,.9);
+  border: 1px solid rgba(0,212,255,.25);
+  border-radius: 12px;
+  padding: 16px;
+  width: 200px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .7rem;
+  color: var(--neon-blue);
+  backdrop-filter: blur(10px);
+  animation: float-widget 5s ease-in-out infinite;
+}
+
+.terminal-widget-2 {
+  position: absolute;
+  bottom: 20px; left: -60px;
+  top: auto; right: auto;
+  animation-delay: -2.5s;
+  color: var(--neon-purple);
+  border-color: rgba(168,85,247,.25);
+}
+
+@keyframes float-widget {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0,212,255,.15);
+}
+
+.terminal-dot { width: 6px; height: 6px; border-radius: 50%; }
+.td-red    { background: #ef4444; }
+.td-yellow { background: #f59e0b; }
+.td-green  { background: #10b981; }
+
+.terminal-line { margin: 3px 0; opacity: .8; }
+.terminal-line.highlight { color: #fff; opacity: 1; }
+
+.terminal-cursor {
+  display: inline-block;
+  width: 7px; height: 12px;
+  background: currentColor;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink .8s step-end infinite;
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
