@@ -1,0 +1,137 @@
+/* =============================================
+   ORBITCORE — Tipografia e Helpers de Layout
+   ============================================= */
+
+h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; letter-spacing: .05em; }
+
+/* Container */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+section { position: relative; z-index: 1; }
+
+/* Section Badge */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid rgba(0,212,255,.3);
+  border-radius: 50px;
+  font-size: .75rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: .15em;
+  color: var(--neon-blue);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.section-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .4; transform: scale(.6); }
+}
+
+/* Section Title */
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Header (centered) */
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Section Text */
+.section-text {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.section-text--mb { margin-bottom: 36px; }
+
+/* Button Group */
+.btn-group { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Utilities */
+.hz-section  { padding: 0 0 60px; }
+.text-center { text-align: center; }
+.text-green  { color: var(--neon-green); }
+.text-red    { color: #ff6b6b; }
+
+/* ── SVG Icons (Lucide · MIT · lucide.dev) ── */
+.icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: inline-block; vertical-align: -0.15em; flex-shrink: 0; }
+
+/* ── Glossary Links ── */
+.glossary-link {
+  color: inherit;
+  text-decoration: none;
+  background: rgba(168,85,247,.08);
+  padding: 2px 14px 5px;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  filter: drop-shadow(0 0 1px rgba(168,85,247,.6));
+  cursor: help;
+  position: relative;
+  transition: color .3s ease, background .3s ease, filter .3s ease;
+}
+
+/* Dotted line */
+.glossary-link::before {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0; right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(168,85,247,.7) 0px, rgba(168,85,247,.7) 3px,
+    transparent 3px, transparent 8px
+  );
+}
+
+/* Sliding neon bar */
+.glossary-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--neon-blue);
+  box-shadow: 0 0 8px var(--neon-blue), 0 0 16px rgba(0,212,255,.4);
+  transition: width .4s ease;
+}
+
+.glossary-link:hover {
+  color: var(--neon-blue);
+  background: rgba(0,212,255,.09);
+  filter: drop-shadow(0 0 1px rgba(0,212,255,.7)) drop-shadow(0 0 6px rgba(0,212,255,.3));
+}
+
+.glossary-link:hover::after { width: 100%; }
+
+.glossary-link--nowrap { white-space: nowrap; color: #fff; font-weight: 700; }
