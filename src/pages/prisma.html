@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Prisma Technologies — Empresa criadora do OrbitCore. Conheça nossa história, valores e missão de democratizar a ciência espacial." />
+  <title>Prisma Technologies | OrbitCore</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/estilo.css" />
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+          <div class="nav-logo-icon"><img src="../assets/prisma_logo_cosmica.jpeg" alt="Prisma Logo" /></div>
+          <span class="nav-logo-text">Orbit<span>Core</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="emulador.html">Emulador</a></li>
+          <li><a href="trappist-1.html">TRAPPIST-1</a></li>
+          <li><a href="missao.html">Missão</a></li>
+          <li><a href="prisma.html" class="active">Prisma</a></li>
+          <li><a href="glossario.html">Glossário</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="emulador.html" class="btn btn-primary">Explorar Agora</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="../../index.html">Início</a>
+        <a href="prisma.html">Prisma Technologies</a>
+        <a href="emulador.html">Emulador TRAPPIST-1</a>
+        <a href="trappist-1.html">TRAPPIST-1</a>
+        <a href="missao.html">Missão</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="hero-bg-orb hero-bg-orb-1"></div>
+    <div class="hero-bg-orb hero-bg-orb-2"></div>
+
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          PRISMA TECHNOLOGIES &nbsp;·&nbsp; EST. 2026
+        </div>
+
+        <h1 class="hero-title">
+          A Empresa por<br />
+          <span class="gradient-text">Trás do OrbitCore</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          A Prisma Technologies é uma startup educacional focada em democratizar o acesso à ciência espacial, integrando hardware IoT, simulações digitais e dados científicos reais da NASA para criar experiências únicas de aprendizado.
+        </p>
+
+        <div class="hero-actions">
+          <a href="missao.html" class="btn btn-primary">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/>
+              <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/>
+            </svg> Ver Missão</a>
+          <a href="emulador.html" class="btn btn-secondary">
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.341 6.484A10 10 0 0 1 10.266 21.85"/>
+              <path d="M3.659 17.516A10 10 0 0 1 13.74 2.152"/>
+              <circle cx="12" cy="12" r="3"/>
+              <circle cx="19" cy="5" r="2"/>
+              <circle cx="5" cy="19" r="2"/>
+            </svg> Emulador TRAPPIST‑1</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">4</div>
+            <div class="hero-stat-label">Integrantes</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">7</div>
+            <div class="hero-stat-label">Disciplinas</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">1</div>
+            <div class="hero-stat-label">ODS ONU</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SOBRE A EMPRESA
+  ═══════════════════════════════════════════ -->
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <div class="section-badge">Quem Somos</div>
+        <h2 class="section-title">
+          Inovação com<br />
+          <span class="gradient-text">Propósito Científico</span>
+        </h2>
+        <p>
+          Somos estudantes do 1º semestre da FIAP que transformaram uma ideia em realidade: uma sonda educacional completa, do hardware ao software, explorando o sistema TRAPPIST‑1.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card reveal">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h3>Nossa Missão</h3>
+          <p>
+            Tornar a ciência espacial acessível para estudantes brasileiros, traduzindo dados complexos da NASA em experiências educacionais interativas e intuitivas.
+          </p>
+        </div>
+
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Nossa Visão</h3>
+          <p>
+            Ser referência nacional em projetos educacionais que combinam IoT, ciência de dados e exploração espacial, inspirando a próxima geração de cientistas e engenheiros.
+          </p>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 3 8 9l4 13 4-13-2.5-6"/><path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"/><path d="M2 9h20"/></svg></div>
+          <h3>Nossos Valores</h3>
+          <p>
+            Precisão científica, acessibilidade educacional, inovação responsável e colaboração interdisciplinar são os pilares que guiam cada decisão no projeto OrbitCore.
+          </p>
+        </div>
+
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+          <h3>Impacto Social</h3>
+          <p>
+            Alinhados ao ODS 9 da ONU, promovemos inovação e infraestrutura científica acessível, contribuindo para que mais estudantes possam aprender sobre astronomia e tecnologia.
+          </p>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></div>
+          <h3>Rigor Científico</h3>
+          <p>
+            Todos os dados do OrbitCore são baseados em pesquisas reais da NASA e do James Webb Space Telescope. A 3ª Lei de Kepler e o ESI são calculados matematicamente.
+          </p>
+        </div>
+
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Integração Total</h3>
+          <p>
+            Do Arduino ao dashboard web, cada componente do projeto foi desenvolvido para trabalhar em conjunto — criando uma experiência coesa e completa.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TIMELINE
+  ═══════════════════════════════════════════ -->
+  <section class="timeline">
+    <div class="container">
+      <div class="timeline-inner">
+
+        <!-- Text -->
+        <div>
+          <div class="section-badge">Linha do Tempo</div>
+          <h2 class="section-title">
+            Como o OrbitCore<br />
+            <span class="gradient-text">Ganhou Vida</span>
+          </h2>
+          <p class="timeline-text-desc">
+            Do conceito inicial ao pipeline de dados, o OrbitCore foi construído em etapas, integrando hardware, modelagem matemática e desenvolvimento web em um projeto coeso. Cada fase trouxe novos desafios e aprendizados.
+          </p>
+          <a href="missao.html" class="btn btn-secondary">📋 Ver Detalhes da Missão</a>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline-list reveal">
+          <div class="timeline-item">
+            <div class="timeline-year">Fase 01 — Ideação</div>
+            <div class="timeline-title">Conceito e Pesquisa</div>
+            <p class="timeline-desc">Definição do tema (TRAPPIST-1), pesquisa sobre dados científicos da NASA, mapeamento das disciplinas envolvidas e planejamento do escopo do projeto.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">Fase 02 — Hardware</div>
+            <div class="timeline-title">Arduino + RFID</div>
+            <p class="timeline-desc">Montagem do circuito com Arduino UNO, leitor MFRC522, LED RGB e buzzer. Programação do sketch C++ para leitura de tags RFID e envio de telemetria serial.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">Fase 03 — Modelagem</div>
+            <div class="timeline-title">Matemática & Modelagem</div>
+            <p class="timeline-desc">Cálculo de órbitas pela 3ª Lei de Kepler e implementação do Índice de Similaridade com a Terra (ESI) para avaliação de habitabilidade dos exoplanetas.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">Fase 04 — Front-End</div>
+            <div class="timeline-title">Dashboard Web</div>
+            <p class="timeline-desc">Criação do site OrbitCore com HTML, CSS e JavaScript puro. Design espacial responsivo com animações, campo estelar em canvas e dados científicos interativos.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">Fase 05 — Integração</div>
+            <div class="timeline-title">Pipeline de Dados</div>
+            <p class="timeline-desc">Integração end-to-end do sistema: leitura RFID → telemetria serial → análise Python com cálculo de ESI → publicação dos dados tratados no dashboard web em tempo real.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       VALORES
+  ═══════════════════════════════════════════ -->
+  <section class="values">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Nossos Pilares</div>
+        <h2 class="section-title">
+          O que Nos<br />
+          <span class="gradient-text">Move</span>
+        </h2>
+      </div>
+
+      <div class="values-grid">
+        <div class="card reveal">
+          <div class="value-icon"><svg class="icon" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44"/><path d="m13.56 11.747 4.332-.924"/><path d="m16 21-3.105-6.21"/><path d="M16.485 5.94a2 2 0 0 1 1.455-2.425l1.09-.272a1 1 0 0 1 1.212.727l1.515 6.06a1 1 0 0 1-.727 1.213l-1.09.272a2 2 0 0 1-2.425-1.455z"/><path d="m6.158 8.633 1.114 4.456"/><path d="m8 21 3.105-6.21"/><circle cx="12" cy="13" r="2"/></svg></div>
+          <h3 class="value-title">Curiosidade Científica</h3>
+          <p class="value-desc">A mesma curiosidade que levou a humanidade a observar as estrelas nos motiva a criar ferramentas que aproximem qualquer pessoa da astronomia moderna.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-1">
+          <div class="value-icon"><svg class="icon" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
+          <h3 class="value-title">Colaboração</h3>
+          <p class="value-desc">O OrbitCore é resultado do trabalho coletivo de uma equipe multidisciplinar, onde cada pessoa contribuiu com suas habilidades únicas para o resultado final.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="value-icon"><svg class="icon" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
+          <h3 class="value-title">Educação Acessível</h3>
+          <p class="value-desc">Acreditamos que o conhecimento científico deve estar ao alcance de todos. Nosso projeto transforma conceitos complexos em experiências simples e cativantes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       EQUIPE
+  ═══════════════════════════════════════════ -->
+  <section class="team">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Nossa Equipe</div>
+        <h2 class="section-title">
+          Os Criadores do<br />
+          <span class="gradient-text">OrbitCore</span>
+        </h2>
+        <p>
+          Quatro estudantes do 1º semestre de Engenharia de Software da FIAP que transformaram dados reais da NASA em uma experiência educacional completa.
+        </p>
+      </div>
+
+      <div class="team-grid">
+
+        <div class="team-card reveal">
+          <div class="team-avatar">
+            <svg class="icon" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="team-name">Ian Tassiotto</div>
+          <div class="team-role">Tech Lead</div>
+          <p class="team-desc">Arduino, RFID, circuito, maquete física, integração do hardware, Wokwi e testes.</p>
+        </div>
+
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-avatar">
+            <svg class="icon" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div class="team-name">Hyan Hideo</div>
+          <div class="team-role">Cientista & Front-end</div>
+          <p class="team-desc">Kepler (3ª Lei), ESI (habitabilidade), pesquisa TRAPPIST-1, HTML, CSS, JavaScript e GitHub com 15+ commits.</p>
+        </div>
+
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-avatar"><svg class="icon" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="team-name">João Mesquita</div>
+          <div class="team-role">Engenheiro de Software & Storyteller</div>
+          <p class="team-desc">Programa Python (menu, funções, integração serial), roteiro do vídeo e edição do pitch.</p>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-avatar"><svg class="icon" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+          <div class="team-name">Elizeu Queiroz</div>
+          <div class="team-role">Designer</div>
+          <p class="team-desc">Backlog (documentação), produção e criação da logo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ODS SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="ods">
+    <div class="container">
+      <div class="ods-inner reveal">
+        <div class="ods-badge">9</div>
+        <div class="ods-content">
+          <div class="ods-title">ODS 9 — Indústria, Inovação e Infraestrutura</div>
+          <p class="ods-desc">
+            A Prisma Technologies alinha seu trabalho ao ODS 9 da ONU ao criar infraestrutura educacional inovadora que democratiza o mapeamento de exoplanetas. Ao integrar hardware real com simulações digitais, contribuímos para uma ciência mais inclusiva — aproximando estudantes brasileiros da fronteira da exploração espacial global e inspirando a próxima geração de inovadores.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo-text">Orbit<span>Core</span></div>
+          <p class="footer-desc">Projeto educacional e científico desenvolvido pela Prisma Technologies para a Global Solution FIAP 2026. Explorando mundos além do nosso Sol.</p>
+          <div class="footer-brand-btns">
+            <a href="emulador.html" class="btn btn-primary btn-sm"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg> Explorar</a>
+            <a href="prisma.html" class="btn btn-ghost btn-sm">Sobre</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Páginas</div>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="prisma.html">Prisma Technologies</a></li>
+            <li><a href="emulador.html">Emulador TRAPPIST‑1</a></li>
+            <li><a href="trappist-1.html">TRAPPIST-1</a></li>
+            <li><a href="missao.html">Missão</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Sistema TRAPPIST-1</div>
+          <ul class="footer-links">
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1b</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1c</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1d</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1e</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1f</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1g</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1h</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 OrbitCore · Prisma Technologies · FIAP Global Solution 1º Semestre</span>
+        <span class="footer-credit">Feito com <span class="footer-heart">♥</span> pela equipe Prisma · ODS 9</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
