@@ -37,19 +37,23 @@
     ];
   }
 
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
 
-    /* Nebulae */
-    nebulae.forEach(n => {
-      const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r);
-      grad.addColorStop(0, n.color + '0.04)');
-      grad.addColorStop(1, n.color + '0)');
-      ctx.fillStyle = grad;
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
+    /* Nebulae — skip on mobile to save GPU */
+    if (!isMobile) {
+      nebulae.forEach(n => {
+        const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r);
+        grad.addColorStop(0, n.color + '0.04)');
+        grad.addColorStop(1, n.color + '0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
 
     /* Stars */
     stars.forEach(s => {
@@ -64,20 +68,24 @@
     ctx.globalAlpha = 1;
   }
 
+  let lastFrame = 0;
   function loop(t) {
+    /* Throttle to ~30fps on mobile */
+    if (isMobile && t - lastFrame < 33) { requestAnimationFrame(loop); return; }
+    lastFrame = t;
     draw(t / 1000);
     requestAnimationFrame(loop);
   }
 
   resize();
-  createStars(220);
+  createStars(isMobile ? 80 : 220);
   createNebulae();
   requestAnimationFrame(loop);
 
   window.addEventListener('resize', () => {
     resize();
     createNebulae();
-    createStars(220);
+    createStars(isMobile ? 80 : 220);
   });
 })();
 
