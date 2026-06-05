@@ -1,0 +1,30 @@
+/* =============================================
+   ORBITCORE — Ponto de Entrada de Estilos
+   Todos os arquivos CSS são importados aqui.
+   ============================================= */
+
+/* Fundação */
+@import './base.css';
+@import './tipografia.css';
+
+/* Componentes Globais */
+@import './navbar.css';
+@import './botoes.css';
+@import './cards.css';
+@import './animacoes.css';
+
+/* Hero e Seções Compartilhadas */
+@import './hero.css';
+@import './secoes.css';
+
+/* Páginas Específicas */
+@import './timeline.css';
+@import './equipe.css';
+@import './missao.css';
+@import './emulador.css';
+@import './trappist-1.css';
+
+@import './glossario.css';
+
+/* Responsivo (sempre por último) */
+@import './responsivo.css';
