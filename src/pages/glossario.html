@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Glossário de termos técnicos do projeto OrbitCore — astronomia, hardware IoT e modelagem matemática." />
+  <title>Glossário Técnico | OrbitCore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilo.css" />
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+          <div class="nav-logo-icon"><img src="../assets/prisma_logo_cosmica.jpeg" alt="Prisma Logo" /></div>
+          <span class="nav-logo-text">Orbit<span>Core</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="emulador.html">Emulador</a></li>
+          <li><a href="trappist-1.html">TRAPPIST-1</a></li>
+          <li><a href="missao.html">Missão</a></li>
+          <li><a href="prisma.html">Prisma</a></li>
+          <li><a href="glossario.html" class="active">Glossário</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="emulador.html" class="btn btn-primary">Explorar Agora</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="../../index.html">Início</a>
+        <a href="prisma.html">Prisma Technologies</a>
+        <a href="emulador.html">Emulador TRAPPIST-1</a>
+        <a href="trappist-1.html">TRAPPIST-1</a>
+        <a href="missao.html">Missão</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+
+  <section class="page-hero">
+    <div class="hero-bg-orb hero-bg-orb-1"></div>
+    <div class="hero-bg-orb hero-bg-orb-2"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          REFERÊNCIA &nbsp;·&nbsp; TERMOS TÉCNICOS
+        </div>
+        <h1 class="hero-title">
+          Glossário<br />
+          <span class="gradient-text">Técnico</span>
+        </h1>
+        <p class="hero-subtitle">
+          Definições dos termos científicos e de hardware utilizados no projeto OrbitCore — de astronomia e exoplanetas a eletrônica e protocolos de comunicação.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">14</div>
+            <div class="hero-stat-label">Termos</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">2</div>
+            <div class="hero-stat-label">Categorias</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glossary-section">
+    <div class="container">
+
+      <div class="glossary-category">
+        <div class="glossary-category-title">Astronomia</div>
+
+        <div class="glossary-entry" id="ana-vermelha">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">Anã Vermelha <span class="glossary-orig">Red Dwarf</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Estrela de baixa massa (&lt; 0,3 M☉) e temperatura superficial (&lt; 4.000 K), com luminosidade muito inferior à do Sol. São as estrelas mais comuns do universo e consomem combustível tão lentamente que podem brilhar por <strong>trilhões de anos</strong>. TRAPPIST-1 é uma anã vermelha ultrafria do tipo espectral M8V, com apenas 0,09 M☉ e temperatura de 2.566 K.</p>
+        </div>
+
+        <div class="glossary-entry" id="au">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">AU <span class="glossary-orig">Astronomical Unit — Unidade Astronômica</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Unidade de distância equivalente à distância média entre a Terra e o Sol: <strong>≈ 149,6 milhões de km</strong>. Usada para medir distâncias dentro de sistemas estelares. Por exemplo, TRAPPIST-1e orbita a sua estrela a 0,0293 AU — cerca de 4,4 milhões de km.</p>
+        </div>
+
+        <div class="glossary-entry" id="esi">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">ESI <span class="glossary-orig">Earth Similarity Index — Índice de Similaridade com a Terra</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Escala de 0 a 1 desenvolvida pelo <em>Planetary Habitability Laboratory</em> da Universidade de Porto Rico que mede o quão parecido um exoplaneta é com a Terra. Combina raio, densidade, velocidade de escape e temperatura de equilíbrio com pesos estatísticos. <strong>Terra = 1,00</strong>; valores acima de 0,80 indicam candidatos habitáveis altamente promissores. TRAPPIST-1e tem ESI = 0,85.</p>
+        </div>
+
+        <div class="glossary-entry" id="massa-terrestre">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">M⊕ <span class="glossary-orig">Massa Terrestre</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Unidade de massa equivalente à massa da Terra: <strong>≈ 5,97 × 10²⁴ kg</strong>. Usada para comparar a massa de exoplanetas com a da Terra. Um planeta com 0,7 M⊕ tem 70% da massa terrestre.</p>
+        </div>
+
+        <div class="glossary-entry" id="raio-terrestre">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">R⊕ <span class="glossary-orig">Raio Terrestre</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Unidade de raio equivalente ao raio médio da Terra: <strong>≈ 6.371 km</strong>. Usada para comparar o tamanho de exoplanetas com a Terra. Um planeta com 0,92 R⊕ é ligeiramente menor que a Terra.</p>
+        </div>
+
+        <div class="glossary-entry" id="ressonancia-orbital">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">Ressonância Orbital <span class="glossary-orig">Orbital Resonance</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Fenômeno gravitacional em que dois ou mais corpos completam suas órbitas em razões de números inteiros simples (ex: 1:2, 2:3). O resultado é uma sincronização periódica que estabiliza o sistema. Os 7 planetas do TRAPPIST-1 estão em uma <strong>cadeia de ressonâncias</strong> (8:5:3:2:1:1), tornando o sistema notavelmente estável ao longo de bilhões de anos.</p>
+        </div>
+
+        <div class="glossary-entry" id="tidally-locked">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">Tidally Locked <span class="glossary-orig">Rotação Síncrona</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Estado orbital em que um planeta leva exatamente o mesmo tempo para girar em torno de seu próprio eixo e para orbitar sua estrela. O resultado é que <strong>um lado fica em dia eterno</strong> e o outro em noite permanente. A Lua está travada gravitacionalmente com a Terra da mesma forma. Todos os planetas do TRAPPIST-1 provavelmente estão nesse estado.</p>
+        </div>
+
+        <div class="glossary-entry" id="zona-habitavel">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">Zona Habitável <span class="glossary-orig">Habitable Zone · Goldilocks Zone</span></div>
+            <span class="glossary-badge glossary-badge--astro">Astronomia</span>
+          </div>
+          <p class="glossary-def">Região ao redor de uma estrela onde a temperatura de equilíbrio de um planeta rochoso com atmosfera semelhante à terrestre permite a existência de <strong>água líquida na superfície</strong>. Não garante habitabilidade, mas é considerada a condição mínima. Para TRAPPIST-1, os planetas e, f e g estão nessa faixa.</p>
+        </div>
+
+      </div>
+
+      <div class="glossary-category">
+        <div class="glossary-category-title">Hardware &amp; Protocolos</div>
+
+        <div class="glossary-entry" id="iot">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">IoT <span class="glossary-orig">Internet of Things — Internet das Coisas</span></div>
+            <span class="glossary-badge glossary-badge--hw">Hardware</span>
+          </div>
+          <p class="glossary-def">Rede de dispositivos físicos equipados com sensores, software e conectividade que permite a coleta e troca de dados sem intervenção humana direta. No OrbitCore, o <strong>Arduino UNO com RFID</strong> é o dispositivo IoT central: detecta tags físicas e transmite telemetria digital.</p>
+        </div>
+
+        <div class="glossary-entry" id="pwm">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">PWM <span class="glossary-orig">Pulse Width Modulation — Modulação por Largura de Pulso</span></div>
+            <span class="glossary-badge glossary-badge--hw">Hardware</span>
+          </div>
+          <p class="glossary-def">Técnica de controle eletrônico que varia a largura dos pulsos em um sinal digital para controlar a potência média entregue a um componente. Uma largura de 50% entrega metade da tensão máxima. No OrbitCore, PWM controla as <strong>cores do LED RGB</strong> (misturando R, G e B com intensidades diferentes) e a frequência do buzzer.</p>
+        </div>
+
+        <div class="glossary-entry" id="rtc">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">RTC <span class="glossary-orig">Real-Time Clock — Relógio de Tempo Real</span></div>
+            <span class="glossary-badge glossary-badge--hw">Hardware</span>
+          </div>
+          <p class="glossary-def">Circuito integrado dedicado a manter a contagem precisa de data e hora mesmo quando o sistema principal está desligado, graças a uma bateria de backup. Comunica-se com o microcontrolador via protocolo <strong>I²C</strong>. No OrbitCore, o módulo <strong>DS1307/DS3231</strong> fornece carimbos de tempo (timestamps) para cada evento de escaneamento RFID, permitindo registrar <em>quando</em> cada planeta foi "visitado" pela sonda com precisão de segundos.</p>
+        </div>
+
+        <div class="glossary-entry" id="rfid">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">RFID <span class="glossary-orig">Radio Frequency Identification — Identificação por Radiofrequência</span></div>
+            <span class="glossary-badge glossary-badge--hw">Hardware</span>
+          </div>
+          <p class="glossary-def">Tecnologia que usa campos eletromagnéticos para identificar automaticamente objetos equipados com tags. <strong>Tags passivas</strong> não precisam de bateria: são energizadas pelo campo do leitor. No OrbitCore, cada um dos 7 planetas possui uma tag RFID com UID hexadecimal único; o leitor MFRC522 a 13,56 MHz detecta qual planeta foi "visitado" pela sonda.</p>
+        </div>
+
+        <div class="glossary-entry" id="spi">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">SPI <span class="glossary-orig">Serial Peripheral Interface — Interface Serial Periférica</span></div>
+            <span class="glossary-badge glossary-badge--hw">Hardware</span>
+          </div>
+          <p class="glossary-def">Protocolo de comunicação síncrona de alta velocidade que usa 4 fios: <strong>MOSI</strong> (dados mestre→escravo), <strong>MISO</strong> (escravo→mestre), <strong>SCK</strong> (clock) e <strong>SS</strong> (seleção do escravo). O leitor MFRC522 se comunica com o Arduino via SPI, permitindo leituras RFID rápidas e confiáveis.</p>
+        </div>
+
+        <div class="glossary-entry" id="uart">
+          <div class="glossary-entry-header">
+            <div class="glossary-term">UART <span class="glossary-orig">Universal Asynchronous Receiver-Transmitter</span></div>
+            <span class="glossary-badge glossary-badge--hw">Hardware</span>
+          </div>
+          <p class="glossary-def">Protocolo de comunicação serial assíncrono que transmite dados <strong>um bit por vez</strong> sem necessidade de sinal de clock compartilhado. Ambos os lados precisam acordar uma taxa de transmissão (baud rate). No OrbitCore, o Arduino usa UART via USB a <strong>9600 baud</strong> para enviar telemetria ao computador no formato <code>SCAN:UID:PLANETA</code>.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo-text">Orbit<span>Core</span></div>
+          <p class="footer-desc">Projeto educacional e científico desenvolvido pela Prisma Technologies para a Global Solution FIAP 2026. Explorando mundos além do nosso Sol.</p>
+          <div class="footer-brand-btns">
+            <a href="emulador.html" class="btn btn-primary btn-sm"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg> Explorar</a>
+            <a href="prisma.html" class="btn btn-ghost btn-sm">Sobre</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Páginas</div>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="prisma.html">Prisma Technologies</a></li>
+            <li><a href="emulador.html">Emulador TRAPPIST‑1</a></li>
+            <li><a href="trappist-1.html">TRAPPIST-1</a></li>
+            <li><a href="missao.html">Missão</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Sistema TRAPPIST-1</div>
+          <ul class="footer-links">
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1b</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1c</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1d</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1e</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1f</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1g</a></li>
+            <li><a href="trappist-1.html#catalogo">TRAPPIST‑1h</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 OrbitCore · Prisma Technologies · FIAP Global Solution 1º Semestre</span>
+        <span class="footer-credit">Feito com <span class="footer-heart">♥</span> pela equipe Prisma · ODS 9</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
