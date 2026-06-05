@@ -1,0 +1,83 @@
+/* =============================================
+   ORBITCORE — Equipe e Valores (Página Prisma)
+   ============================================= */
+
+/* ── Values ── */
+.values {
+  padding: 100px 0;
+  background: linear-gradient(180deg, transparent, rgba(168,85,247,.02) 50%, transparent);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.values-grid .card { text-align: center; }
+
+.value-icon { font-size: 3rem; margin-bottom: 16px; }
+
+.value-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.value-desc { color: var(--text-muted); font-size: .9rem; line-height: 1.6; }
+
+/* ── Team ── */
+.team { padding: 100px 0; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 340px));
+  gap: 24px;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.team-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.team-card:hover {
+  border-color: rgba(0,212,255,.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4), 0 0 30px rgba(0,212,255,.08);
+}
+
+.team-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 24px rgba(0,212,255,.3);
+}
+
+.team-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.team-role {
+  font-size: .85rem;
+  color: var(--neon-blue);
+  margin-bottom: 12px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.team-desc { font-size: .85rem; color: var(--text-muted); line-height: 1.5; }
