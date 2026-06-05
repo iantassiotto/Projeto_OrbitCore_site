@@ -1,18 +1,60 @@
 # 🛸 OrbitCore — Site Oficial
 
-> Central de Controle da missão de exploração do sistema TRAPPIST-1.  
-> Projeto desenvolvido para a **Global Solution 2026 — FIAP**.
+> Site oficial da missão OrbitCore de exploração do sistema TRAPPIST-1.  
+> Desenvolvido para a **Global Solution 2026 — FIAP** pela Equipe PRISMA.
+
+🔗 **[Acessar o site](https://iantassiotto.github.io/Projeto_OrbitCore_site/index.html)**
 
 ---
 
-## 📡 Sobre o Projeto
+## 📡 Sobre o Site
 
-O **OrbitCore** é uma sonda veleiro solar autônoma projetada para explorar
-exoplanetas do sistema TRAPPIST-1, localizado a 40 anos-luz da Terra.
+O site da OrbitCore funciona como o **portal oficial da missão** — semelhante
+aos sites de missões da NASA. Ele apresenta ao público o que é a sonda,
+como ela funciona, quais são seus componentes, qual é o objetivo científico
+da missão e os resultados da análise dos 7 planetas do sistema TRAPPIST-1.
 
-Este repositório contém o **site da Central de Controle**, interface visual
-que apresenta os dados coletados pela sonda, os 7 planetas do sistema e
-o painel de habitabilidade.
+---
+
+## 📄 Páginas
+
+### `index.html` — Página Inicial
+Apresentação geral da missão OrbitCore: conceito da sonda veleiro solar,
+objetivos científicos, destaque para o sistema TRAPPIST-1 e chamada
+para as demais seções do site.
+
+### `pages/missao.html` — A Missão
+Descrição detalhada da missão:
+- Componentes da sonda (vela solar, RFID, Arduino, sensores)
+- Como a sonda funciona na prática
+- Por que o TRAPPIST-1 foi escolhido como sistema-alvo
+- Contexto científico: habitabilidade e exploração espacial
+- Códigos utilizados no projeto (Arduino e Python)
+
+### `pages/trappist-1.html` — Sistema TRAPPIST-1
+Catálogo completo dos 7 exoplanetas com:
+- Especificações de cada planeta (raio, massa, gravidade, temperatura)
+- ESI — Índice de Similaridade com a Terra
+- Composição atmosférica (gases detectados ou estimados)
+- Período orbital e distância da estrela
+- Comparação direta de cada planeta com a Terra
+- Indicação do planeta mais habitável
+
+### `pages/emulador.html` — Emulador
+Seção interativa com três demonstrações:
+- **Visualização 3D** do sistema TRAPPIST-1 via NASA Eyes on Exoplanets
+- **Circuito Arduino** em tempo real — demonstração do modelo teórico
+  da sonda OrbitCore funcionando
+- **Terminal simulado** — emula o recebimento de dados da sonda,
+  espelhando o comportamento do programa Python
+
+### `pages/prisma.html` — Equipe PRISMA
+Apresentação dos integrantes da equipe, funções e contribuições
+de cada membro no projeto.
+
+### `pages/glossario.html` — Glossário
+Definições de todos os termos técnicos e científicos presentes no site:
+exoplanetas, ESI, vela solar, RFID, tidally locked, magnitude, UA, entre outros.
 
 ---
 
@@ -20,10 +62,10 @@ o painel de habitabilidade.
 
 ```
 ORBITCORE_SITE/
-├── index.html                  # Página inicial
+├── index.html
 ├── readme.md
 └── src/
-    ├── assets/                 # Imagens e mídias
+    ├── assets/
     │   ├── earth.png
     │   ├── favicon.svg
     │   ├── prisma_logo_cosmica.jpeg
@@ -35,7 +77,7 @@ ORBITCORE_SITE/
     │   ├── TRAPPIST-1f.png
     │   ├── TRAPPIST-1g.png
     │   └── TRAPPIST-1h.png
-    ├── css/                    # Estilos separados por componente
+    ├── css/
     │   ├── base.css            # Reset e variáveis globais
     │   ├── tipografia.css      # Fontes e textos
     │   ├── estilo.css          # Estilos gerais
@@ -49,52 +91,18 @@ ORBITCORE_SITE/
     │   ├── missao.css          # Página da missão
     │   ├── trappist-1.css      # Página dos planetas
     │   ├── glossario.css       # Página do glossário
-    │   ├── emulador.css        # Terminal emulador
+    │   ├── emulador.css        # Terminal e emulador
     │   ├── equipe.css          # Página da equipe
     │   └── responsivo.css      # Media queries
     ├── js/
-    │   └── script.js           # Lógica e interatividade
-    └── pages/                  # Páginas internas
-        ├── missao.html         # Sobre a missão OrbitCore
-        ├── trappist-1.html     # Catálogo dos 7 planetas
-        ├── emulador.html       # Terminal simulado (Serial Monitor)
-        ├── glossario.html      # Glossário de termos espaciais
-        └── prisma.html         # Equipe PRISMA
+    │   └── script.js           # Interatividade, quiz e emulador
+    └── pages/
+        ├── missao.html
+        ├── trappist-1.html
+        ├── emulador.html
+        ├── glossario.html
+        └── prisma.html
 ```
-
----
-
-## 🚀 Como Executar
-
-O site é estático — não precisa de instalação.
-
-**Opção 1 — abrir direto:**
-```
-Abra o arquivo index.html no navegador.
-```
-
-**Opção 2 — servidor local (recomendado):**
-```bash
-# Com Python
-python -m http.server 8080
-
-# Com Node.js
-npx serve .
-```
-Acesse `http://localhost:8080` no navegador.
-
----
-
-## 📄 Páginas
-
-| Arquivo | Conteúdo |
-|---|---|
-| `index.html` | Página inicial — hero, resumo da missão, chamada para ação |
-| `pages/missao.html` | Descrição da missão, objetivos e conceito da sonda |
-| `pages/trappist-1.html` | Catálogo completo dos 7 planetas com ESI e atmosfera |
-| `pages/emulador.html` | Terminal que simula o recebimento de dados da sonda |
-| `pages/glossario.html` | Glossário de termos científicos e tecnológicos |
-| `pages/prisma.html` | Apresentação da equipe PRISMA |
 
 ---
 
@@ -104,23 +112,24 @@ Acesse `http://localhost:8080` no navegador.
 |---|---|
 | HTML5 | Estrutura de todas as páginas |
 | CSS3 + Flexbox | Layout, responsividade e animações |
-| JavaScript (ES6+) | Interatividade, quiz e emulador |
+| JavaScript (ES6+) | Interatividade, emulador e lógica de comparação |
+| NASA Eyes on Exoplanets | Visualização 3D do sistema TRAPPIST-1 |
 
 ---
 
-## 🌍 Sistema TRAPPIST-1
+## 🌍 Sistema TRAPPIST-1 — Resumo
 
-| Planeta | ESI | Classe |
-|---------|-----|--------|
-| TRAPPIST-1b | 0.30 | Hostil |
-| TRAPPIST-1c | 0.57 | Hostil |
-| TRAPPIST-1d | 0.71 | Possível |
-| TRAPPIST-1e | 0.85 | **Habitável** |
-| TRAPPIST-1f | 0.67 | Possível |
-| TRAPPIST-1g | 0.58 | Possível |
-| TRAPPIST-1h | 0.34 | Hostil |
+| Planeta | ESI | Atmosfera | Classe |
+|---------|-----|-----------|--------|
+| TRAPPIST-1b | 0.30 | Inexistente | Hostil |
+| TRAPPIST-1c | 0.57 | Muito tênue | Hostil |
+| TRAPPIST-1d | 0.71 | CO₂, H₂O, N₂ | Possível |
+| TRAPPIST-1e | 0.85 | N₂, CO₂, H₂O, CH₄ | **Habitável** |
+| TRAPPIST-1f | 0.67 | CO₂, H₂O, N₂ | Possível |
+| TRAPPIST-1g | 0.58 | CO₂, CH₄, N₂ | Possível |
+| TRAPPIST-1h | 0.34 | Inexistente | Hostil |
 
-ESI = Earth Similarity Index — Planetary Habitability Laboratory.
+ESI = Earth Similarity Index — Planetary Habitability Laboratory (PHL/UPR).
 
 ---
 
@@ -144,6 +153,19 @@ ESI = Earth Similarity Index — Planetary Habitability Laboratory.
 
 ---
 
+## 🚀 Como Executar Localmente
+
+```bash
+# Com Python
+python -m http.server 8080
+
+# Com Node.js
+npx serve .
+```
+Acesse `http://localhost:8080` no navegador.
+
+---
+
 ## 🤖 Uso de Inteligência Artificial
 
 Documentado em [`AI.md`](./AI.md) conforme exigido pela disciplina
@@ -152,9 +174,10 @@ prompt utilizado e trecho gerado.
 
 ---
 
-## 📚 Referências
+## 📚 Referências Científicas
 
 - NASA Exoplanet Archive — https://exoplanetarchive.ipac.caltech.edu
+- NASA Eyes on Exoplanets — https://eyes.nasa.gov/apps/exo
 - JWST TRAPPIST-1 Results (2023) — Nature Astronomy
 - Planetary Habitability Laboratory — https://phl.upr.edu
 - The Planetary Society / LightSail 2 — https://www.planetary.org
