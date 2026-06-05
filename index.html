@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./src/assets/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="OrbitCore — Sonda de exploração de exoplanetas do sistema TRAPPIST-1. Projeto educacional e científico desenvolvido pela Prisma Technologies." />
+  <title>OrbitCore | Exploração de Exoplanetas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/css/estilo.css" />
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon"><img src="src/assets/prisma_logo_cosmica.jpeg" alt="Prisma Logo" /></div>
+          <span class="nav-logo-text">Orbit<span>Core</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="./src/pages/emulador.html">Emulador</a></li>
+          <li><a href="./src/pages/trappist-1.html">TRAPPIST-1</a></li>
+          <li><a href="./src/pages/missao.html">Missão</a></li>
+          <li><a href="./src/pages/prisma.html">Prisma</a></li>
+          <li><a href="./src/pages/glossario.html">Glossário</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="./src/pages/emulador.html" class="btn btn-primary">Explorar Agora</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Início</a>
+        <a href="./src/pages/prisma.html">Prisma Technologies</a>
+        <a href="./src/pages/emulador.html">Emulador TRAPPIST-1</a>
+        <a href="./src/pages/trappist-1.html">TRAPPIST-1</a>
+        <a href="./src/pages/missao.html">Missão</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg-orb hero-bg-orb-1"></div>
+    <div class="hero-bg-orb hero-bg-orb-2"></div>
+
+    <div class="container">
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            SISTEMA TRAPPIST&#8209;1 &nbsp;·&nbsp; MISSÃO ATIVA
+          </div>
+
+          <h1 class="hero-title">
+            Explorando<br />
+            <span class="gradient-text">Mundos Além</span><br />
+            do Nosso Sol
+          </h1>
+
+          <p class="hero-subtitle">
+            OrbitCore é uma sonda educacional e científica que mapeia exoplanetas do sistema TRAPPIST‑1 com hardware real (Arduino + <a href="src/pages/glossario.html#rtc" class="glossary-link">RTC</a> + <a href="src/pages/glossario.html#rfid" class="glossary-link">RFID</a>) integrado a simulações digitais — desenvolvida peloZ <strong>Prisma Technologies</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a href="src/pages/prisma.html" class="btn btn-primary">
+              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 12h4"/>
+                <path d="M10 8h4"/>
+                <path d="M14 21v-3a2 2 0 0 0-4 0v3"/>
+                <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/>
+                <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/>
+              </svg> Sobre o Prisma</a>
+            <a href="src/pages/emulador.html" class="btn btn-secondary">
+              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.341 6.484A10 10 0 0 1 10.266 21.85"/>
+                <path d="M3.659 17.516A10 10 0 0 1 13.74 2.152"/>
+                <circle cx="12" cy="12" r="3"/>
+                <circle cx="19" cy="5" r="2"/>
+                <circle cx="5" cy="19" r="2"/>
+              </svg> Emulador TRAPPIST‑1</a>
+            <a href="src/pages/emulador.html#wokwi" class="btn btn-ghost">
+              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+              </svg> Simulação Wokwi</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-value">7</div>
+              <div class="hero-stat-label">Exoplanetas</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">40</div>
+              <div class="hero-stat-label">Anos&#8209;Luz</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">3</div>
+              <div class="hero-stat-label"><a href="src/pages/glossario.html#zona-habitavel" class="glossary-link">Zona Habitável</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="planet-system">
+            <div class="planet-orbit orbit-1"><div class="planet-dot"></div></div>
+            <div class="planet-orbit orbit-2"><div class="planet-dot"></div></div>
+            <div class="planet-orbit orbit-3"><div class="planet-dot"></div></div>
+            <div class="planet-orbit orbit-4"><div class="planet-dot"></div></div>
+            <div class="star-center"></div>
+          </div>
+
+          <div class="terminal-widget">
+            <div class="terminal-header">
+              <div class="terminal-dot td-red"></div>
+              <div class="terminal-dot td-yellow"></div>
+              <div class="terminal-dot td-green"></div>
+            </div>
+            <div class="terminal-line">$ orbitcore scan</div>
+            <div class="terminal-line highlight">▶ TRAPPIST-1e</div>
+            <div class="terminal-line">ESI: 0.85</div>
+            <div class="terminal-line">Temp: -22 °C</div>
+            <div class="terminal-line">Atm: <span class="text-red">Desconhecida</span></div>
+            <div class="terminal-line">Status: <span class="text-green">HABITÁVEL</span><span class="terminal-cursor"></span></div>
+          </div>
+
+          <div class="terminal-widget terminal-widget-2">
+            <div class="terminal-header">
+              <div class="terminal-dot td-red"></div>
+              <div class="terminal-dot td-yellow"></div>
+              <div class="terminal-dot td-green"></div>
+            </div>
+            <div class="terminal-line">$ rfid detect</div>
+            <div class="terminal-line highlight">▶ Tag: 0xA3F2</div>
+            <div class="terminal-line">Planeta: 1f</div>
+            <div class="terminal-line">Dist: 0.0385 AU</div>
+            <div class="terminal-line">LED: <span class="text-red">■ VERMELHO</span><span class="terminal-cursor"></span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FEATURES SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="features">
+    <div class="container">
+      <div class="features-header">
+        <div class="section-badge">Tecnologia OrbitCore</div>
+        <h2 class="section-title">
+          Ciência e Engenharia<br />
+          <span class="gradient-text">em Uma Missão</span>
+        </h2>
+        <p>
+          Integramos hardware real, simulação digital e dados científicos reais da NASA para criar uma experiência única de exploração espacial.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card reveal">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13.5 6.5-3.148-3.148a1.205 1.205 0 0 0-1.704 0L6.352 5.648a1.205 1.205 0 0 0 0 1.704L9.5 10.5"/><path d="M16.5 7.5 19 5"/><path d="m17.5 10.5 3.148 3.148a1.205 1.205 0 0 1 0 1.704l-2.296 2.296a1.205 1.205 0 0 1-1.704 0L13.5 14.5"/><path d="M9 21a6 6 0 0 0-6-6"/><path d="M9.352 10.648a1.205 1.205 0 0 0 0 1.704l2.296 2.296a1.205 1.205 0 0 0 1.704 0l4.296-4.296a1.205 1.205 0 0 0 0-1.704l-2.296-2.296a1.205 1.205 0 0 0-1.704 0z"/></svg></div>
+          <h3>Sonda OrbitCore</h3>
+          <p>Maquete física interativa com a sonda movida conceitualmente por velas de vento solar, dentro de uma caixa escura simulando o espaço sideral.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a7.31 7.31 0 0 0 10 10Z"/><path d="m9 15 3-3"/><path d="M17 13a6 6 0 0 0-6-6"/><path d="M21 13A10 10 0 0 0 11 3"/></svg></div>
+          <h3>RFID + Arduino</h3>
+          <p>Leitores MFRC522 detectam a aproximação da sonda aos planetas e disparam telemetria em tempo real via comunicação serial.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+          <h3>LED RGB + Buzzer</h3>
+          <p>Feedback visual e sonoro imediato ao escanear cada planeta.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+          <h3>Dashboard Web</h3>
+          <p>Interface front-end com dados científicos: raio, massa, gravidade, temperatura, período orbital, tipo de planeta e índice ESI de habitabilidade.</p>
+        </div>
+
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
+          <h3>Modelagem Matemática</h3>
+          <p>Cálculo de órbitas pela 3ª Lei de Kepler, Índice de Similaridade com a Terra (ESI), propulsão da vela solar (função potência), datação radioativa (função exponencial), magnitude estelar (função logarítmica) e órbitas planetárias (função trigonométrica), aplicados em Python.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MISSION — DATA SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="mission">
+    <div class="container">
+      <div class="mission-inner">
+
+        <div class="reveal reveal-delay-2">
+          <div class="section-badge">Nossa Missão</div>
+          <h2 class="section-title">
+            Democratizando a <span class="gradient-text">Exploração Espacial</span>
+          </h2>
+          <p class="section-text">
+            O OrbitCore nasceu para tornar a ciência espacial acessível. Ao integrar hardware real com simulações digitais, qualquer estudante pode explorar o sistema TRAPPIST‑1 e analisar dados reais de mundos potencialmente habitáveis.
+          </p>
+          <p class="section-text section-text--mb">
+            A sonda registra automaticamente dados científicos ao detectar cada planeta, calculados com as mesmas equações usadas por astrônomos profissionais.
+          </p>
+          <div class="btn-group">
+            <a href="src/pages/emulador.html" class="btn btn-primary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg> Ver Emulador</a>
+            <a href="src/pages/trappist-1.html" class="btn btn-secondary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.341 6.484A10 10 0 0 1 10.266 21.85"/><path d="M3.659 17.516A10 10 0 0 1 13.74 2.152"/><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/></svg> Ver TRAPPIST-1</a>
+          </div>
+        </div>
+        
+        <div class="mission-visual reveal">
+          <div class="mission-card-main">
+            <div class="mission-card-title">▶ Telemetria</div>
+            <div class="data-row"><span class="data-label">Planeta</span><span class="data-value">TRAPPIST-1e</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value yellow">0.95 g</span></div>
+            <div class="data-row"><span class="data-label">Temperatura</span><span class="data-value">-22°C média</span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value purple">6.1 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.029 AU</span></div>
+            <div class="data-row"><span class="data-label"><a href="src/pages/glossario.html#esi" class="glossary-link">ESI</a> (Habitabilidade)</span><span class="data-value green">0.85 — ALTA ✓</span></div>
+          </div>
+
+          <div class="mission-badge-float">
+            <div class="big">ESI</div>
+            <div class="small">0.85</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ODS SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="ods">
+    <div class="container">
+      <div class="ods-inner reveal">
+        <div class="ods-badge">9</div>
+        <div class="ods-content">
+          <div class="ods-title">ODS 9 — Indústria, Inovação e Infraestrutura</div>
+          <p class="ods-desc">
+            O OrbitCore se alinha ao ODS 9 da ONU ao democratizar o acesso ao conhecimento sobre exoplanetas. Ao transformar dados complexos em experiências educacionais acessíveis, contribuímos para uma ciência mais inclusiva e inovadora — aproximando estudantes brasileiros da fronteira da exploração espacial global.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PAGES — NAVIGATION CARDS
+  ═══════════════════════════════════════════ -->
+  <section class="pages">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Explore o Projeto</div>
+        <h2 class="section-title">
+          Tudo o que o<br><span class="gradient-text">OrbitCore oferece</span>
+        </h2>
+        <p>
+          Navegue pelas seções do projeto e descubra cada camada desta experiência científica e educacional.
+        </p>
+      </div>
+
+      <div class="pages-grid">
+        <a href="src/pages/prisma.html" class="page-card reveal">
+          <div class="page-card-icon"><svg class="icon" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg></div>
+          <div class="page-card-title">Prisma Technologies</div>
+          <p class="page-card-desc">Conheça a empresa criadora do OrbitCore. História, valores, linha do tempo e missão de democratizar a ciência espacial.</p>
+          <div class="page-card-link">Acessar →</div>
+        </a>
+
+        <a href="src/pages/emulador.html" class="page-card reveal reveal-delay-1">
+          <div class="page-card-icon"><svg class="icon" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div>
+          <div class="page-card-title">Emulador TRAPPIST‑1</div>
+          <p class="page-card-desc">Visualize o sistema real via NASA Eyes on Exoplanets e simule o circuito Arduino diretamente no Wokwi.</p>
+          <div class="page-card-link">Explorar →</div>
+        </a>
+
+        <a href="src/pages/trappist-1.html" class="page-card reveal reveal-delay-2">
+          <div class="page-card-icon"><svg class="icon" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.341 6.484A10 10 0 0 1 10.266 21.85"/><path d="M3.659 17.516A10 10 0 0 1 13.74 2.152"/><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/></svg></div>
+          <div class="page-card-title">TRAPPIST‑1</div>
+          <p class="page-card-desc">Estrela e 7 exoplanetas do sistema com dados científicos, índice de habitabilidade ESI e comparação com a Terra.</p>
+          <div class="page-card-link">Descobrir →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo-text">Orbit<span>Core</span></div>
+          <p class="footer-desc">Projeto educacional e científico desenvolvido pela Prisma Technologies para a Global Solution FIAP 2026. Explorando mundos além do nosso Sol.</p>
+          <div class="footer-brand-btns">
+            <a href="src/pages/emulador.html" class="btn btn-primary btn-sm"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg> Explorar</a>
+            <a href="src/pages/prisma.html" class="btn btn-ghost btn-sm">Sobre</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Páginas</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="src/pages/prisma.html">Prisma Technologies</a></li>
+            <li><a href="src/pages/emulador.html">Emulador TRAPPIST‑1</a></li>
+            <li><a href="src/pages/trappist-1.html">TRAPPIST-1</a></li>
+            <li><a href="src/pages/missao.html">Missão</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Sistema TRAPPIST-1</div>
+          <ul class="footer-links">
+            <li><a href="src/pages/trappist-1.html#catalogo">TRAPPIST‑1b</a></li>
+            <li><a href="src/pages/trappist-1.html#catalogo">TRAPPIST‑1c</a></li>
+            <li><a href="src/pages/trappist-1.html#catalogo">TRAPPIST‑1d</a></li>
+            <li><a href="src/pages/trappist-1.html#catalogo">TRAPPIST‑1e</a></li>
+            <li><a href="src/pages/trappist-1.html#catalogo">TRAPPIST‑1f</a></li>
+            <li><a href="src/pages/trappist-1.html#catalogo">TRAPPIST‑1g</a></li>
+            <li><a href="src/pages/trappist-1.html#catalogo">TRAPPIST‑1h</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 OrbitCore · Prisma Technologies · FIAP Global Solution 1º Semestre</span>
+        <span class="footer-credit">Feito com <span class="footer-heart">♥</span> pela equipe Prisma · ODS 9</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./src/js/script.js"></script>
+</body>
+</html>
