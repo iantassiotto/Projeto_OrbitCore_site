@@ -1,0 +1,72 @@
+/* =============================================
+   ORBITCORE — Botões
+   ============================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.1), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.btn:hover::before { opacity: 1; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--neon-blue), #0066ff);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0,212,255,.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(0,212,255,.6);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--neon-blue);
+  border: 1px solid rgba(0,212,255,.5);
+}
+
+.btn-secondary:hover {
+  background: rgba(0,212,255,.1);
+  border-color: var(--neon-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-blue);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--dark-border);
+}
+
+.btn-ghost:hover {
+  color: var(--text-primary);
+  border-color: rgba(0,212,255,.3);
+  background: rgba(0,212,255,.05);
+  transform: translateY(-2px);
+}
+
+.btn-sm { font-size: .7rem !important; padding: 8px 16px !important; }
