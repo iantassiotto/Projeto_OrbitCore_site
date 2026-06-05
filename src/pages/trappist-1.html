@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Sistema TRAPPIST-1 — estrela e 7 exoplanetas com dados científicos, habitabilidade ESI e comparação com a Terra." />
+  <title>Sistema TRAPPIST‑1 | OrbitCore</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilo.css" />
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+          <div class="nav-logo-icon"><img src="../assets/prisma_logo_cosmica.jpeg" alt="Prisma Logo" /></div>
+          <span class="nav-logo-text">Orbit<span>Core</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../../index.html">Início</a></li>
+          <li><a href="emulador.html">Emulador</a></li>
+          <li><a href="trappist-1.html" class="active">TRAPPIST-1</a></li>
+          <li><a href="missao.html">Missão</a></li>
+          <li><a href="prisma.html">Prisma</a></li>
+          <li><a href="glossario.html">Glossário</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="emulador.html" class="btn btn-primary">Explorar Agora</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="../../index.html">Início</a>
+        <a href="prisma.html">Prisma Technologies</a>
+        <a href="emulador.html">Emulador TRAPPIST-1</a>
+        <a href="trappist-1.html">TRAPPIST-1</a>
+        <a href="missao.html">Missão</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="hero-bg-orb hero-bg-orb-1"></div>
+    <div class="hero-bg-orb hero-bg-orb-2"></div>
+
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          TRAPPIST&#8209;1 &nbsp;·&nbsp; 7 EXOPLANETAS &nbsp;·&nbsp; 40 ANOS&#8209;LUZ
+        </div>
+
+        <h1 class="hero-title">
+          7 Mundos<br>
+          <span class="gradient-text">Além do Sol</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          O sistema TRAPPIST-1 abriga sete planetas rochosos orbitando uma estrela anã vermelha a 
+          40 anos‑luz da Terra. Três deles estão na zona habitável — com temperaturas que podem sustentar 
+          água líquida e, talvez, vida.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn btn-primary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.341 6.484A10 10 0 0 1 10.266 21.85"/><path d="M3.659 17.516A10 10 0 0 1 13.74 2.152"/><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/></svg> Ver Catálogo</a>
+          <a href="emulador.html" class="btn btn-secondary"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg> Ver no NASA Eyes</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">7</div>
+            <div class="hero-stat-label">Planetas</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">3</div>
+            <div class="hero-stat-label">Habitáveis</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">0.85</div>
+            <div class="hero-stat-label"><a href="glossario.html#esi" class="glossary-link">ESI</a> Máx.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ZONA HABITÁVEL
+  ═══════════════════════════════════════════ -->
+  <section class="hz-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Habitabilidade</div>
+        <h2 class="section-title reveal"><a href="glossario.html#zona-habitavel" class="glossary-link">Zona Habitável</a><br /><span class="gradient-text">do TRAPPIST-1</span></h2>
+        <p>Planetas e, f e g estão na zona habitável — região onde a temperatura permite água líquida na superfície.</p>
+      </div>
+
+      <div class="hz-visual reveal">
+        <div class="hz-zone">
+          <div class="hz-zone-label">Zona Habitável</div>
+        </div>
+        <div class="hz-star"></div>
+        <div class="hz-planets">
+          <div class="hz-planet">
+            <div class="hz-planet-dot hz-dot-b"></div>
+            <div class="hz-planet-name">1b</div>
+          </div>
+          <div class="hz-planet">
+            <div class="hz-planet-dot hz-dot-c"></div>
+            <div class="hz-planet-name">1c</div>
+          </div>
+          <div class="hz-planet">
+            <div class="hz-planet-dot hz-dot-d"></div>
+            <div class="hz-planet-name">1d</div>
+          </div>
+          <div class="hz-planet">
+            <div class="hz-planet-dot hz-dot-e"></div>
+            <div class="hz-planet-name">1e ★</div>
+          </div>
+          <div class="hz-planet">
+            <div class="hz-planet-dot hz-dot-f"></div>
+            <div class="hz-planet-name">1f</div>
+          </div>
+          <div class="hz-planet">
+            <div class="hz-planet-dot hz-dot-g"></div>
+            <div class="hz-planet-name">1g</div>
+          </div>
+          <div class="hz-planet">
+            <div class="hz-planet-dot hz-dot-h"></div>
+            <div class="hz-planet-name">1h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COMPARAÇÃO TERRA × TRAPPIST-1
+  ═══════════════════════════════════════════ -->
+  <section class="compare-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Análise Comparativa</div>
+        <h2 class="section-title reveal">
+          Terra vs <span class="gradient-text">TRAPPIST‑1</span>
+        </h2>
+        <p class="section-text reveal">
+          Selecione um planeta e compare seus parâmetros físicos com os da Terra lado a lado.
+        </p>
+      </div>
+
+      <div class="compare-selector reveal">
+        <button class="compare-tab" data-planet="b">1b</button>
+        <button class="compare-tab" data-planet="c">1c</button>
+        <button class="compare-tab" data-planet="d">1d</button>
+        <button class="compare-tab compare-tab--active" data-planet="e">1e ★</button>
+        <button class="compare-tab" data-planet="f">1f</button>
+        <button class="compare-tab" data-planet="g">1g</button>
+        <button class="compare-tab" data-planet="h">1h</button>
+      </div>
+
+      <div class="compare-card reveal" id="compare-card">
+        <div class="compare-planets">
+          <div class="compare-planet-col">
+            <div class="compare-orb-wrap compare-orb-wrap--earth">
+              <img src="../assets/earth.png" alt="Terra" class="compare-planet-img" />
+            </div>
+            <div class="compare-planet-name">Terra</div>
+            <div class="compare-planet-sub">Planeta de Referência</div>
+            <span class="compare-esi-tag compare-esi-tag--perfect">ESI 1.00</span>
+          </div>
+          <div class="compare-vs-col">
+            <div class="compare-vs-ring">VS</div>
+            <div class="compare-compat">
+              <div class="compare-compat-pct" id="cp-compat">80%</div>
+              <div class="compare-compat-label">compatibilidade</div>
+            </div>
+          </div>
+          <div class="compare-planet-col compare-planet-col--trappist">
+            <div class="compare-orb-wrap compare-orb-wrap--e" id="cp-orb">
+              <img src="../assets/TRAPPIST-1e.png" alt="TRAPPIST-1e" class="compare-planet-img" id="cp-orb-img" />
+            </div>
+            <div class="compare-planet-name" id="cp-name">TRAPPIST‑1e</div>
+            <div class="compare-planet-sub" id="cp-sub">Alvo da Missão OrbitCore</div>
+            <span class="compare-esi-tag" id="cp-esi-badge">ESI 0.85</span>
+          </div>
+        </div>
+
+        <div class="compare-table">
+          <div class="compare-metric">
+            <span class="compare-val compare-val--ref">1.00 R⊕</span>
+            <div class="compare-metric-mid">
+              <div class="compare-metric-label">Raio Planetário</div>
+              <div class="compare-bar-track"><div class="compare-bar-fill" id="cp-radius-fill"></div></div>
+              <div class="compare-metric-pct" id="cp-radius-pct">92% similar</div>
+            </div>
+            <span class="compare-val" id="cp-radius-val">0.92 R⊕</span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-val compare-val--ref">1.00 M⊕</span>
+            <div class="compare-metric-mid">
+              <div class="compare-metric-label">Massa Planetária</div>
+              <div class="compare-bar-track"><div class="compare-bar-fill" id="cp-mass-fill"></div></div>
+              <div class="compare-metric-pct" id="cp-mass-pct">69% similar</div>
+            </div>
+            <span class="compare-val" id="cp-mass-val">0.69 M⊕</span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-val compare-val--ref">1.00 g</span>
+            <div class="compare-metric-mid">
+              <div class="compare-metric-label">Gravidade Superficial</div>
+              <div class="compare-bar-track"><div class="compare-bar-fill" id="cp-grav-fill"></div></div>
+              <div class="compare-metric-pct" id="cp-grav-pct">82% similar</div>
+            </div>
+            <span class="compare-val" id="cp-grav-val">0.82 g</span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-val compare-val--ref">+15°C</span>
+            <div class="compare-metric-mid">
+              <div class="compare-metric-label">Temperatura Média</div>
+              <div class="compare-bar-track"><div class="compare-bar-fill" id="cp-temp-fill"></div></div>
+              <div class="compare-metric-pct" id="cp-temp-pct">63% similar</div>
+            </div>
+            <span class="compare-val" id="cp-temp-val">-22°C</span>
+          </div>
+          <div class="compare-metric">
+            <span class="compare-val compare-val--ref">1.00</span>
+            <div class="compare-metric-mid">
+              <div class="compare-metric-label">Índice de Similaridade com a Terra (ESI)</div>
+              <div class="compare-bar-track"><div class="compare-bar-fill" id="cp-esi-fill"></div></div>
+              <div class="compare-metric-pct" id="cp-esi-pct">85% similar</div>
+            </div>
+            <span class="compare-val" id="cp-esi-val">0.85</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CATÁLOGO DE PLANETAS
+  ═══════════════════════════════════════════ -->
+  <section class="catalog" id="catalogo">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Catálogo Científico</div>
+        <h2 class="section-title">
+          O Sistema<br />
+          <span class="gradient-text">TRAPPIST‑1</span>
+        </h2>
+        <p>Estrela e 7 exoplanetas com dados baseados em pesquisas publicadas pela NASA e no NASA Exoplanet Archive.</p>
+      </div>
+
+      <div class="catalog-grid">
+
+        <!-- TRAPPIST-1 (estrela) -->
+        <div class="planet-card star-card reveal">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Estrela Central · <a href="glossario.html#ana-vermelha" class="glossary-link">Anã Vermelha</a></div>
+              <div class="planet-name">TRAPPIST‑1</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-star">Estrela M8V</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-star">
+              <img src="../assets/TRAPPIST-1_SUN.webp" alt="TRAPPIST-1" class="planet-orb-img" />
+            </div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Tipo Espectral</span><span class="data-value">M8V · Anã Vermelha Ultra-fria</span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">0.09 M☉</span></div>
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">0.12 R☉</span></div>
+            <div class="data-row"><span class="data-label">Temperatura Superficial</span><span class="data-value data-value--orange">2 566 K (~2 293°C)</span></div>
+            <div class="data-row"><span class="data-label">Luminosidade</span><span class="data-value">0.00055 L☉</span></div>
+            <div class="data-row"><span class="data-label">Idade Estimada</span><span class="data-value data-value--purple">7.6 Gyr</span></div>
+            <div class="data-row"><span class="data-label">Distância da Terra</span><span class="data-value">40.66 anos-luz</span></div>
+            <div class="data-row"><span class="data-label">Planetas Conhecidos</span><span class="data-value data-value--green">7 confirmados ✓</span></div>
+          </div>
+          <p class="planet-desc">TRAPPIST-1 é uma anã vermelha ultra-fria a apenas 40.66 anos-luz da Terra. Sua baixa luminosidade — menos de 0,1% do brilho do Sol — permite que os 7 planetas orbitais fiquem muito próximos à estrela e ainda assim mantenham temperaturas potencialmente habitáveis. Sua vida útil estimada em trilhões de anos a torna um dos ambientes mais duradouros para a evolução da vida.</p>
+        </div>
+
+        <!-- TRAPPIST-1b -->
+        <div class="planet-card trappist-b reveal">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Planeta 01 · Mais próximo</div>
+              <div class="planet-name">TRAPPIST‑1b</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-hostile">Hostil</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-b"><img src="../assets/TRAPPIST-1b.png" alt="TRAPPIST-1b" class="planet-orb-img" /></div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">1.116 <a href="glossario.html#raio-terrestre" class="glossary-link">R⊕</a></span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">1.374 <a href="glossario.html#massa-terrestre" class="glossary-link">M⊕</a></span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value data-value--purple">1.51 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.0115 <a href="glossario.html#au" class="glossary-link">AU</a></span></div>
+            <div class="data-row"><span class="data-label">Temperatura Média</span><span class="data-value data-value--red">125°C</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value data-value--yellow">1.10 g</span></div>
+            <div class="data-row"><span class="data-label">Atmosfera</span><span class="data-value data-value--red">Inexistente -> nenhum gás detectado</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso · <a href="glossario.html#tidally-locked" class="glossary-link">Tidally Locked</a></span></div>
+            <div class="data-row"><span class="data-label">ESI (Habitabilidade)</span><span class="data-value data-value--orange">0.30 — BAIXO ✗</span></div>
+          </div>
+          <p class="planet-desc">O planeta mais próximo da estrela. Extremamente quente, provavelmente sem atmosfera densa e considerado inabitável.</p>
+        </div>
+
+        <!-- TRAPPIST-1c -->
+        <div class="planet-card trappist-c reveal reveal-delay-1">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Planeta 02</div>
+              <div class="planet-name">TRAPPIST‑1c</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-hostile">Hostil</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-c"><img src="../assets/TRAPPIST-1c.png" alt="TRAPPIST-1c" class="planet-orb-img" /></div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">1.097 R⊕</span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">1.308 M⊕</span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value data-value--purple">2.42 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.0158 AU</span></div>
+            <div class="data-row"><span class="data-label">Temperatura Média</span><span class="data-value data-value--orange">65°C</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value data-value--yellow">1.10 g</span></div>
+            <div class="data-row"><span class="data-label">Atmosfera</span><span class="data-value data-value--yellow">Praticamente inexistente -> Possível CO₂ residual</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso · Tidally Locked</span></div>
+            <div class="data-row"><span class="data-label">ESI (Habitabilidade)</span><span class="data-value data-value--yellow">0.57 — MODERADO</span></div>
+          </div>
+          <p class="planet-desc">Similar à Vênus em tamanho e aparência. Estudos do James Webb (2023) indicam que provavelmente não possui atmosfera espessa, sendo quente demais para a vida tal como conhecemos.</p>
+        </div>
+
+        <!-- TRAPPIST-1d -->
+        <div class="planet-card trappist-d reveal">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Planeta 03 · Borda da Zona Habitável</div>
+              <div class="planet-name">TRAPPIST‑1d</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-possible">Possível</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-d"><img src="../assets/TRAPPIST-1d.png" alt="TRAPPIST-1d" class="planet-orb-img" /></div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">0.770 R⊕</span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">0.41 M⊕</span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value data-value--purple">4.05 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.0223 AU</span></div>
+            <div class="data-row"><span class="data-label">Temperatura Média</span><span class="data-value data-value--green">13°C</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value data-value--yellow">0.63 g</span></div>
+            <div class="data-row"><span class="data-label">Atmosfera</span><span class="data-value data-value--orange">Fina -> CO₂, H₂O (vapor), N₂</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso · Tidally Locked</span></div>
+            <div class="data-row"><span class="data-label">ESI (Habitabilidade)</span><span class="data-value data-value--light-green">0.71 — ALTO</span></div>
+          </div>
+          <p class="planet-desc">O de menor raio do sistema (0.770 R⊕). Está na borda interna da zona habitável com temperatura amena, mas sua baixa massa pode dificultar a retenção de uma atmosfera densa a longo prazo.</p>
+        </div>
+
+        <!-- TRAPPIST-1e -->
+        <div class="planet-card trappist-e reveal reveal-delay-1">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Planeta 04 · Mais Similar à Terra ★</div>
+              <div class="planet-name">TRAPPIST‑1e</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-habitable">Habitável ✓</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-e"><img src="../assets/TRAPPIST-1e.png" alt="TRAPPIST-1e" class="planet-orb-img" /></div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">0.920 R⊕</span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">0.692 M⊕</span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value data-value--purple">6.10 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.0293 AU</span></div>
+            <div class="data-row"><span class="data-label">Temperatura Média</span><span class="data-value data-value--green">-22°C</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value data-value--yellow">0.95 g</span></div>
+            <div class="data-row"><span class="data-label">Atmosfera</span><span class="data-value data-value--green">Semelhante à Terra -> N₂, CO₂, H₂O e traços de CH₄ e O₂</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso · Tidally Locked</span></div>
+            <div class="data-row"><span class="data-label">ESI (Habitabilidade)</span><span class="data-value data-value--green">0.85 — MUITO ALTO ✓</span></div>
+          </div>
+          <p class="planet-desc">O exoplaneta mais promissor do sistema — e um dos melhores candidatos à habitabilidade já descobertos. Tamanho, massa e temperatura similares à Terra, na zona habitável central.</p>
+        </div>
+
+        <!-- TRAPPIST-1f -->
+        <div class="planet-card trappist-f reveal">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Planeta 05 · Zona Habitável</div>
+              <div class="planet-name">TRAPPIST‑1f</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-possible">Possível</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-f"><img src="../assets/TRAPPIST-1f.png" alt="TRAPPIST-1f" class="planet-orb-img" /></div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">1.045 R⊕</span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">1.039 M⊕</span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value data-value--purple">9.21 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.0385 AU</span></div>
+            <div class="data-row"><span class="data-label">Temperatura Média</span><span class="data-value data-value--blue">-58°C</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value data-value--yellow">0.95 g</span></div>
+            <div class="data-row"><span class="data-label">Atmosfera</span><span class="data-value data-value--blue">Densa e fria -> CO₂, H₂O (gelo e vapor) e N₂</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso · Tidally Locked</span></div>
+            <div class="data-row"><span class="data-label">ESI (Habitabilidade)</span><span class="data-value data-value--light-green">0.67 — ALTO</span></div>
+          </div>
+          <p class="planet-desc">Na zona habitável com massa quase idêntica à Terra. A temperatura baixa sugere superfície parcialmente gelada, mas com efeito estufa adequado poderia ter água líquida em regiões temperadas.</p>
+        </div>
+
+        <!-- TRAPPIST-1g -->
+        <div class="planet-card trappist-g reveal reveal-delay-1">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Planeta 06 · Maior do Sistema</div>
+              <div class="planet-name">TRAPPIST‑1g</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-possible">POSSÍVEL</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-g"><img src="../assets/TRAPPIST-1g.png" alt="TRAPPIST-1g" class="planet-orb-img" /></div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">1.129 R⊕</span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">1.321 M⊕</span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value data-value--purple">12.35 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.0469 AU</span></div>
+            <div class="data-row"><span class="data-label">Temperatura Média</span><span class="data-value data-value--blue">-76°C</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value data-value--yellow">1.04 g</span></div>
+            <div class="data-row"><span class="data-label">Atmosfera</span><span class="data-value data-value--orange">Densa com efeito estufa -> CO₂, CH₄, N₂ e H₂O (gelo)</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso · Tidally Locked</span></div>
+            <div class="data-row"><span class="data-label">ESI (Habitabilidade)</span><span class="data-value data-value--yellow">0.58 — MODERADO</span></div>
+          </div>
+          <p class="planet-desc">O maior planeta do sistema, na borda externa da zona habitável. Sua maior massa pode reter uma atmosfera mais robusta, compensando parcialmente a menor irradiação recebida da estrela.</p>
+        </div>
+
+        <!-- TRAPPIST-1h -->
+        <div class="planet-card trappist-h planet-card--full reveal">
+          <div class="planet-header">
+            <div class="planet-name-group">
+              <div class="planet-label">Planeta 07 · Mais distante</div>
+              <div class="planet-name">TRAPPIST‑1h</div>
+              <div class="planet-badges">
+                <span class="planet-badge badge-frozen">Congelado</span>
+              </div>
+            </div>
+            <div class="planet-orb orb-h"><img src="../assets/TRAPPIST-1h.png" alt="TRAPPIST-1h" class="planet-orb-img" /></div>
+          </div>
+          <div class="planet-data">
+            <div class="data-row"><span class="data-label">Raio</span><span class="data-value">0.775 R⊕</span></div>
+            <div class="data-row"><span class="data-label">Massa</span><span class="data-value">0.326 M⊕</span></div>
+            <div class="data-row"><span class="data-label">Período Orbital</span><span class="data-value data-value--purple">18.77 dias</span></div>
+            <div class="data-row"><span class="data-label">Dist. da Estrela</span><span class="data-value">0.0619 AU</span></div>
+            <div class="data-row"><span class="data-label">Temperatura Média</span><span class="data-value data-value--blue">-101°C</span></div>
+            <div class="data-row"><span class="data-label">Gravidade</span><span class="data-value data-value--yellow">0.54 g</span></div>
+            <div class="data-row"><span class="data-label">Atmosfera</span><span class="data-value data-value--yellow">Praticamente inexistente -> CO₂ (congelado) e traços de N₂</span></div>
+            <div class="data-row"><span class="data-label">Tipo</span><span class="data-value">Rochoso · Tidally Locked</span></div>
+            <div class="data-row"><span class="data-label">ESI (Habitabilidade)</span><span class="data-value data-value--orange">0.34 — BAIXO ✗</span></div>
+          </div>
+          <p class="planet-desc">O planeta mais distante e frio do sistema. Provavelmente congelado, similar a um mundo de gelo. Sem fontes de calor internas ou atmosfera significativa, é considerado inabitável.</p>
+        </div>
+
+      </div>
+
+      <div class="catalog-sources reveal">
+        <div class="catalog-sources-title">Fontes Científicas</div>
+        <ul class="catalog-sources-list">
+          <li><a href="https://doi.org/10.3847/PSJ/abd022" target="_blank" rel="noopener noreferrer">Agol et al. (2021) — Refining the Transit-Timing and Photometric-Dynamical Solution for the TRAPPIST-1 System · <em>The Planetary Science Journal</em></a></li>
+          <li><a href="https://doi.org/10.1051/0004-6361/201732233" target="_blank" rel="noopener noreferrer">Grimm et al. (2018) — The nature of the TRAPPIST-1 exoplanets · <em>Astronomy &amp; Astrophysics</em></a></li>
+          <li><a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener noreferrer">NASA Exoplanet Archive — California Institute of Technology / JPL</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CURIOSIDADES
+  ═══════════════════════════════════════════ -->
+  <section class="curiosidades">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Você Sabia?</div>
+        <h2 class="section-title reveal">Curiosidades do<br /><span class="gradient-text">Sistema TRAPPIST‑1</span></h2>
+        <p>Fatos surpreendentes sobre um dos sistemas planetários mais estudados da astronomia&nbsp;moderna.</p>
+      </div>
+
+      <div class="curiosidades-grid">
+        <div class="curiosidade-card reveal">
+          <div class="curiosidade-num">01</div>
+          <p class="curiosidade-text">Um "ano" completo em TRAPPIST‑1b dura apenas <strong>1,51 dias</strong> terrestres — menos tempo que um fim de semana.</p>
+        </div>
+        <div class="curiosidade-card reveal reveal-delay-1">
+          <div class="curiosidade-num">02</div>
+          <p class="curiosidade-text">Os 7 planetas do TRAPPIST‑1 cabem todos dentro da <strong>órbita de Mercúrio</strong> — o sistema inteiro é menor que nossa vizinhança solar imediata.</p>
+        </div>
+        <div class="curiosidade-card reveal reveal-delay-2">
+          <div class="curiosidade-num">03</div>
+          <p class="curiosidade-text">Em qualquer um dos planetas de TRAPPIST‑1, os mundos vizinhos seriam visíveis a olho nu, aparecendo no céu com <strong>tamanhos semelhantes ou até maiores que a nossa Lua.</strong></p>
+        </div>
+        <div class="curiosidade-card reveal">
+          <div class="curiosidade-num">04</div>
+          <p class="curiosidade-text">Todos os 7 planetas estão em <a href="glossario.html#ressonancia-orbital" class="glossary-link glossary-link--nowrap">ressonância orbital</a> — suas órbitas completam razões matemáticas exatas como um relógio cósmico.</p>
+        </div>
+        <div class="curiosidade-card reveal reveal-delay-1">
+          <div class="curiosidade-num">05</div>
+          <p class="curiosidade-text">TRAPPIST‑1e recebe <strong>66% da energia solar</strong> que a Terra recebe, mas sua temperatura média ainda pode sustentar água líquida com atmosfera adequada.</p>
+        </div>
+        <div class="curiosidade-card reveal reveal-delay-2">
+          <div class="curiosidade-num">06</div>
+          <p class="curiosidade-text">A estrela pode brilhar por mais de <strong>10 trilhões de anos</strong> — 700 vezes a idade atual do universo, dando tempo suficiente para a evolução da vida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ODS
+  ═══════════════════════════════════════════ -->
+  <section class="ods">
+    <div class="container">
+      <div class="ods-inner reveal">
+        <div class="ods-badge">9</div>
+        <div class="ods-content">
+          <div class="ods-title">ODS 9 — Indústria, Inovação e Infraestrutura</div>
+          <p class="ods-desc">
+            O catálogo científico do OrbitCore democratiza o acesso a dados complexos da NASA, transformando-os em experiências educacionais acessíveis. Ao usar as mesmas equações dos astrônomos profissionais e dados reais do TRAPPIST-1, contribuímos para uma ciência mais inclusiva e conectada com o ODS 9 da ONU.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo-text">Orbit<span>Core</span></div>
+          <p class="footer-desc">Projeto educacional e científico desenvolvido pela Prisma Technologies para a Global Solution FIAP 2026. Explorando mundos além do nosso Sol.</p>
+          <div class="footer-brand-btns">
+            <a href="emulador.html" class="btn btn-primary btn-sm"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg> Explorar</a>
+            <a href="prisma.html" class="btn btn-ghost btn-sm">Sobre</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Páginas</div>
+          <ul class="footer-links">
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="prisma.html">Prisma Technologies</a></li>
+            <li><a href="emulador.html">Emulador TRAPPIST‑1</a></li>
+            <li><a href="trappist-1.html">TRAPPIST-1</a></li>
+            <li><a href="missao.html">Missão</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Sistema TRAPPIST-1</div>
+          <ul class="footer-links">
+            <li><a href="#catalogo">TRAPPIST‑1b</a></li>
+            <li><a href="#catalogo">TRAPPIST‑1c</a></li>
+            <li><a href="#catalogo">TRAPPIST‑1d</a></li>
+            <li><a href="#catalogo">TRAPPIST‑1e</a></li>
+            <li><a href="#catalogo">TRAPPIST‑1f</a></li>
+            <li><a href="#catalogo">TRAPPIST‑1g</a></li>
+            <li><a href="#catalogo">TRAPPIST‑1h</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 OrbitCore · Prisma Technologies · FIAP Global Solution 1º Semestre</span>
+        <span class="footer-credit">Feito com <span class="footer-heart">♥</span> pela equipe Prisma · ODS 9</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
