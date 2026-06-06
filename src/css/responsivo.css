@@ -74,8 +74,29 @@
 
   /* Exoplanetas page */
   .catalog-grid   { grid-template-columns: 1fr; }
-  .hz-visual      { display: none; }
   .compare-card   { padding: 28px 20px; }
+
+  /* Zona Habitável — adapta layout horizontal para mobile */
+  .hz-visual {
+    height: auto;
+    min-height: 90px;
+    padding: 14px 12px;
+    overflow-x: auto;
+    border-radius: 14px;
+  }
+  .hz-star {
+    left: 10px;
+    width: 28px;
+    height: 28px;
+  }
+  .hz-planets {
+    padding: 0 16px 0 46px;
+    gap: 0;
+    min-width: 280px;
+  }
+  .hz-planet-dot { transform: scale(0.85); }
+  .hz-planet-name { font-size: .5rem; }
+  .hz-zone-label { font-size: .5rem; letter-spacing: .08em; top: 6px; }
   .compare-planets { grid-template-columns: 1fr; gap: 20px; }
   .compare-planet-col--trappist { align-items: flex-start; }
   .compare-vs-col { flex-direction: row; justify-content: flex-start; gap: 20px; }
