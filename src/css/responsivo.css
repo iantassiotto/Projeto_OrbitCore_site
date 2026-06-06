@@ -97,8 +97,12 @@
   /* CRÍTICO: elimina filter:blur(100px) + animação dos orbs decorativos */
   .hero-bg-orb { display: none; }
 
-  /* ALTO: paralisa as 4 rotações CSS do sistema planetário */
-  .orbit-1, .orbit-2, .orbit-3, .orbit-4 { animation: none; }
+  /* ALTO: paralisa as 4 rotações CSS do sistema planetário,
+     cada órbita em ângulo diferente para distribuir os planetas */
+  .orbit-1 { animation: none; transform: translate(-50%, -50%) rotate(45deg); }
+  .orbit-2 { animation: none; transform: translate(-50%, -50%) rotate(150deg); }
+  .orbit-3 { animation: none; transform: translate(-50%, -50%) rotate(240deg); }
+  .orbit-4 { animation: none; transform: translate(-50%, -50%) rotate(320deg); }
 
   /* ALTO: remove animação de box-shadow da estrela central */
   .star-center { animation: none; }
