@@ -96,7 +96,20 @@
   }
   .hz-planet-dot { transform: scale(0.85); }
   .hz-planet-name { font-size: .5rem; }
-  .hz-zone-label { font-size: .5rem; letter-spacing: .08em; top: 6px; }
+  .hz-zone {
+    /* Permite que a label flutue para fora da borda da zona sem ser cortada */
+    overflow: visible;
+  }
+  .hz-zone-label {
+    white-space: nowrap !important;
+    font-size: .46rem;
+    letter-spacing: .05em;
+    top: 5px;
+    /* Ancora a label no centro do hz-visual, não do hz-zone,
+       para que não seja cortada pelo overflow do pai */
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .compare-planets { grid-template-columns: 1fr; gap: 20px; }
   .compare-planet-col--trappist { align-items: flex-start; }
   .compare-vs-col { flex-direction: row; justify-content: flex-start; gap: 20px; }
