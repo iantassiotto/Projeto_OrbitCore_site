@@ -91,3 +91,15 @@
   .kepler-calc-body   { grid-template-columns: 1fr; }
   .kepler-result-group { border-top: 1px solid var(--dark-border); padding-top: 20px; }
 }
+
+/* ── Performance Mobile ── */
+@media (max-width: 768px) {
+  /* CRÍTICO: elimina filter:blur(100px) + animação dos orbs decorativos */
+  .hero-bg-orb { display: none; }
+
+  /* ALTO: paralisa as 4 rotações CSS do sistema planetário */
+  .orbit-1, .orbit-2, .orbit-3, .orbit-4 { animation: none; }
+
+  /* ALTO: remove animação de box-shadow da estrela central */
+  .star-center { animation: none; }
+}

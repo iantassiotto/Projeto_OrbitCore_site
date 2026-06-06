@@ -69,7 +69,10 @@
   }
 
   let lastFrame = 0;
+  let paused = false;
+
   function loop(t) {
+    if (paused) return;
     /* Throttle to ~30fps on mobile */
     if (isMobile && t - lastFrame < 33) { requestAnimationFrame(loop); return; }
     lastFrame = t;
@@ -81,6 +84,16 @@
   createStars(isMobile ? 80 : 220);
   createNebulae();
   requestAnimationFrame(loop);
+
+  /* CRÍTICO: pausa RAF quando aba não está visível */
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      paused = true;
+    } else {
+      paused = false;
+      requestAnimationFrame(loop);
+    }
+  });
 
   window.addEventListener('resize', () => {
     resize();
@@ -355,4 +368,43 @@
   });
 
   atualizar(0.0293);
+})();
+
+/* ── Lazy-load de Iframes (emulador.html) ──────────────────── */
+(function initLazyIframes() {
+  const iframes = document.querySelectorAll('iframe[data-src]');
+  if (!iframes.length) return;
+
+  const isMobileDevice = window.matchMedia('(max-width: 768px)').matches;
+
+  iframes.forEach(function(iframe) {
+    const wrapper = iframe.closest('.embed-frame-wrapper');
+    if (!wrapper) return;
+
+    if (isMobileDevice) {
+      /* CRÍTICO: no mobile mostra overlay — só carrega o iframe ao toque */
+      const overlay = document.createElement('div');
+      overlay.className = 'embed-tap-overlay';
+      overlay.innerHTML =
+        '<p class="embed-tap-label">Conteúdo interativo pesado</p>' +
+        '<button class="btn btn-primary embed-tap-btn">Toque para carregar</button>';
+      wrapper.appendChild(overlay);
+
+      overlay.querySelector('.embed-tap-btn').addEventListener('click', function() {
+        iframe.src = iframe.dataset.src;
+        overlay.remove();
+      });
+    } else {
+      /* Desktop: carrega automaticamente ao entrar no viewport */
+      const io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            iframe.src = iframe.dataset.src;
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '300px' });
+      io.observe(iframe);
+    }
+  });
 })();
