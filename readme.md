@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/assets/orbitcore-prototipo.jpg" alt="Prototipo da sonda OrbitCore" width="480"/>
+<img src="src/assets/orbitcore.jpg" alt="Prototipo da sonda OrbitCore" width="480"/>
 
 # 🛸 OrbitCore
 
@@ -50,7 +50,7 @@ O OrbitCore é uma **prova de conceito (PoC)**: ele simula uma missão espacial 
 ## 🛰️ O Protótipo
 
 <div align="center">
-<img src="src/assets/orbitcore-prototipo.jpg" alt="Prototipo fisico da sonda OrbitCore" width="420"/>
+<img src="src/assets/orbitcore.jpg" alt="Prototipo fisico da sonda OrbitCore" width="420"/>
 </div>
 
 O protótipo representa a sonda veleiro solar em escala. A grande superfície reflexiva é a **vela solar** — feita de material metalizado, ela capta os fótons emitidos pela estrela. No centro fica o **corpo da sonda**, que abriga a eletrônica: o microcontrolador Arduino, o leitor RFID, o LED RGB, o buzzer e o módulo de comunicação sem fio.
@@ -87,7 +87,7 @@ A luz é feita de **fótons** — partículas sem massa. Mesmo sem massa, cada f
 ## 🌌 O Sistema TRAPPIST-1
 
 <div align="center">
-<img src="src/assets/trappist-1-sistema.jpg" alt="Ilustracao do sistema TRAPPIST-1 com os 7 planetas" width="720"/>
+<img src="src/assets/sistema-solar-trappist1.jpg" alt="Ilustracao do sistema TRAPPIST-1 com os 7 planetas" width="720"/>
 <br/>
 <sub>Ilustração: NASA/JPL-Caltech</sub>
 </div>
