@@ -182,6 +182,8 @@ Projeto_OrbitCore_site/
 
 ## 🚀 Páginas do Site
 
+**[🌐 Acessar o Site](https://iantassiotto.github.io/Projeto_OrbitCore_site/index.html)**
+
 | Página | Conteúdo |
 |---|---|
 | **Início** (`index.html`) | Apresentação geral da missão e chamada para as seções |
