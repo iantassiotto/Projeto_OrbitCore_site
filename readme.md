@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/assets/orbitcore-prototipo.jpg" alt="Protótipo da sonda OrbitCore — veleiro solar" width="480"/>
+<img src="src/assets/orbitcore-prototipo.jpg" alt="Prototipo da sonda OrbitCore" width="480"/>
 
 # 🛸 OrbitCore
 
@@ -10,10 +10,10 @@
 
 🏆 **Projeto CAMPEÃO — 1º lugar na Global Solution 2026 da FIAP** 🏆
 
-![Status](https://img.shields.io/badge/status-concluído-success)
-![FIAP](https://img.shields.io/badge/FIAP-Global%20Solution%202026-ec008c)
-![Prêmio](https://img.shields.io/badge/🏆-1º%20Lugar-gold)
-![Licença](https://img.shields.io/badge/licença-acadêmica-blue)
+![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-success)
+![FIAP](https://img.shields.io/badge/FIAP-Global_Solution_2026-ec008c)
+![Premio](https://img.shields.io/badge/pr%C3%AAmio-1%C2%BA_lugar-gold)
+![Licenca](https://img.shields.io/badge/licen%C3%A7a-acad%C3%AAmica-blue)
 
 **[🌐 Acessar o Site](https://iantassiotto.github.io/Projeto_OrbitCore_site/index.html)** · **[🎥 Assistir ao Vídeo](https://www.youtube.com/watch?v=8CI5FU4M9v0)**
 
@@ -27,7 +27,7 @@ Assista à apresentação cinematográfica da missão OrbitCore:
 
 <div align="center">
 
-[![Vídeo OrbitCore](src/assets/orbitcore-prototipo.jpg)](https://www.youtube.com/watch?v=8CI5FU4M9v0)
+[![Vídeo OrbitCore](https://img.youtube.com/vi/8CI5FU4M9v0/maxresdefault.jpg)](https://www.youtube.com/watch?v=8CI5FU4M9v0)
 
 **▶️ https://www.youtube.com/watch?v=8CI5FU4M9v0**
 
@@ -50,7 +50,7 @@ O OrbitCore é uma **prova de conceito (PoC)**: ele simula uma missão espacial 
 ## 🛰️ O Protótipo
 
 <div align="center">
-<img src="src/assets/orbitcore-prototipo.jpg" alt="Protótipo físico da sonda OrbitCore" width="420"/>
+<img src="src/assets/orbitcore-prototipo.jpg" alt="Prototipo fisico da sonda OrbitCore" width="420"/>
 </div>
 
 O protótipo representa a sonda veleiro solar em escala. A grande superfície reflexiva é a **vela solar** — feita de material metalizado, ela capta os fótons emitidos pela estrela. No centro fica o **corpo da sonda**, que abriga a eletrônica: o microcontrolador Arduino, o leitor RFID, o LED RGB, o buzzer e o módulo de comunicação sem fio.
@@ -87,7 +87,7 @@ A luz é feita de **fótons** — partículas sem massa. Mesmo sem massa, cada f
 ## 🌌 O Sistema TRAPPIST-1
 
 <div align="center">
-<img src="src/assets/trappist-1-sistema.jpg" alt="Ilustração do sistema TRAPPIST-1 com os 7 planetas" width="720"/>
+<img src="src/assets/trappist-1-sistema.jpg" alt="Ilustracao do sistema TRAPPIST-1 com os 7 planetas" width="720"/>
 <br/>
 <sub>Ilustração: NASA/JPL-Caltech</sub>
 </div>
@@ -155,11 +155,11 @@ Por reunir esses fatores, o TRAPPIST-1e tem a **capacidade de abrigar seres vivo
 ## 🗂️ Estrutura do Repositório
 
 ```
-Projeto_OrbitCore/
+Projeto_OrbitCore_site/
 ├── README.md
 └── src/
     ├── assets/
-    │   ├── orbitcore-prototipo.jpg      <- imagem do protótipo (NOVA)
+    │   ├── orbitcore-prototipo.jpg      <- imagem do prototipo (NOVA)
     │   ├── trappist-1-sistema.jpg       <- imagem do sistema (NOVA)
     │   ├── earth.png
     │   ├── favicon.svg
