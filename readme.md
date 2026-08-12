@@ -230,7 +230,7 @@ Projeto_OrbitCore_site/
 
 *"Transforme a luz em possibilidades."*
 
-**— Equipe PRISMA**
+**Equipe PRISMA**
 
 Projeto acadêmico — Global Solution 2026 — FIAP.
 Todos os direitos reservados à Equipe PRISMA.
