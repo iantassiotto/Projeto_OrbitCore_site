@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="src/assets/orbitcore.jpg" alt="Prototipo da sonda OrbitCore" width="480"/>
-
 # 🛸 OrbitCore
 
 ### Sonda Veleiro Solar de Exploração de Exoplanetas
